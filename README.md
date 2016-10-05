@@ -12,12 +12,19 @@ and just type `gulp` the default task start a server and do all the compilations
 # Presentation Structure : 
 
 -> index.html : the entry point
+
 -> assets\images : all the images of the prez
+
 -> assets\markdown\prez.md : the content of the presentation. This will will be parse and transform to html by reveal 
+
 -> scss\prez\style.scss : the specifics css of the presentation
+
 -> scss\theme\* : the theme use (binomed see below to discover it)
+
 -> libs\* : all the libraries needed for running well the presentation. Do not touch to the files in this directory
+
 -> reveal : the presentation engine. Do not touch to the files in this directory
+
 -> scripts : the javascript files to manage the interaction with the slides 
 
 Codes for writing the slides : 
@@ -35,7 +42,7 @@ You can add some meta-data to slides / elements by adding
 ## On Slides
 
 ```html
-<!-- .slides: data-custom="custom" class="my-class" -->
+<!-- .slide: data-custom="custom" class="my-class" -->
 ```
 
 This will produce at the end : 
@@ -67,7 +74,7 @@ This will produce at the end :
 
 in order to facilitate the disposition on some slides. You can use thoses helpers. Each time, use the class : 
 
-* `cetner` : the element will center horizontaly
+* `center` : the element will center horizontaly
 * `full-width` : the element will take 100% of width
 * `full-height` : the element will take 100% of height
 * `float-left` : the element will have `float = left`

@@ -17,7 +17,29 @@
 
 ## Qui sommes nous ?
 
+### François Beaufort
+
+<!-- .element: class="descjf" -->
+une super position de poste
+
+![avatar w-300 wp-200](assets/images/fbeaufort.jpg)
+
+![company_logo](assets/images/google.png)
+
+
+<!-- .element: class="gplus" -->
+[+FrancoisBeafort](http://plus.google.com/+FrancoisBeaufort)
+
+Notes:
+
+##==##
+
+<!-- .slide: class="who-am-i" -->
+
+## Qui sommes nous ?
+
 ### Jean-François Garreau
+
 
 <!-- .element: class="descjf" -->
 IoT Manager, Senior innovation developper & Community Manager
@@ -37,23 +59,6 @@ IoT Manager, Senior innovation developper & Community Manager
 
 ##==##
 
-<!-- .slide: class="who-am-i" -->
-
-## Qui sommes nous ?
-
-### François Beaufort
-
-<!-- .element: class="descjf" -->
-blabla
-
-![avatar w-300 wp-200](assets/images/fbeaufort.jpg)
-
-![company_logo](assets/images/google.png)
-
-<!-- .element: class="gplus" -->
-[+FrancoisBeafort](http://plus.google.com/+FrancoisBeaufort)
-
-
 <!--
   ____  _     _    _ ______ _______ ____   ____ _______ _    _ 
  |  _ \| |   | |  | |  ____|__   __/ __ \ / __ \__   __| |  | |
@@ -64,8 +69,6 @@ blabla
                                                                
                                                   
 -->
-
-##==##
 
 <!-- .slide: class="transition-white" -->
 

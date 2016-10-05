@@ -79,6 +79,18 @@ Qqes slides d'explication et de code
 
 ##==##
 
+<!-- .slide: class="with-code" -->
+
+# Récupération par nom de service
+
+```javascript
+navigator.bluetooth.requestDevice({ filters: [{ services: ['battery_service'] }] })
+.then(device => {...})
+.catch(error => { console.log(error); });
+```
+
+##==##
+
 <!-- .slide: class="transition-black" -->
 
 # Heart Rate

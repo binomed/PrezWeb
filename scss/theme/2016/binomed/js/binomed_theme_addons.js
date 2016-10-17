@@ -52,7 +52,8 @@ var BINOMED_THEME = BINOMED_THEME || function(){
 
 		var map = {
 			'transition-white' : '#ddd',
-			'transition-black' : '#3d4349'			
+			'transition-black' : '#3d4349',
+			'with-code' : '#3f3f3f'			
 		};
 
 		for (var key in map){

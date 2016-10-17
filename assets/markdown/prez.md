@@ -42,7 +42,7 @@ Notes:
 
 
 <!-- .element: class="descjf" -->
-IoT Manager, Senior innovation developper & Community Manager
+Senior innovation developper & Community Manager
 
 ![avatar w-300 wp-200](assets/images/jf.jpg)
 
@@ -70,7 +70,7 @@ IoT Manager, Senior innovation developper & Community Manager
                                                   
 -->
 
-<!-- .slide: class="transition-white" -->
+<!-- .slide: class="transition-white" data-state="stop-code-connect-ble" -->
 
 # Web Bluetooth
 
@@ -79,19 +79,57 @@ Qqes slides d'explication et de code
 
 ##==##
 
-<!-- .slide: class="with-code" -->
+<!-- .slide: class="with-code" data-state="code-connect-ble stop-code-read-charact" -->
 
-# Récupération par nom de service
+# Connect by name
 
 ```javascript
 navigator.bluetooth.requestDevice({ filters: [{ services: ['battery_service'] }] })
-.then(device => {...})
+.then(device => {
+  return device.gatt.connect();
+})
 .catch(error => { console.log(error); });
 ```
 
+<div id="highlight-connect-ble" class="highlight-code"></div>  
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+<div class="fragment" data-fragment-index="2" hidden></div>
+
+
 ##==##
 
-<!-- .slide: class="transition-black" -->
+<!-- .slide: class="with-code" data-state="stop-code-connect-ble code-read-charact" -->
+
+## Read Charactaristic
+
+```javascript
+device.gatt.getPrimaryService('battery_service')
+.then(service => {
+  // Getting Battery Level Characteristic...
+  return service.getCharacteristic('battery_level');})
+.then(characteristic => {
+  // Reading Battery Level...
+  return characteristic.readValue();})
+.then(value => {
+  // In Chrome 50+, a DataView is returned instead of an ArrayBuffer.
+  value = value.buffer ? value : new DataView(value);
+  console.log('Battery percentage is ' + value.getUint8(0));})
+.catch(error => { console.log(error); });
+```
+
+<div id="highlight-read-charact" class="highlight-code"></div>  
+
+<div class="fragment" hidden></div>
+<div class="fragment" hidden></div>
+<div class="fragment" hidden></div>
+<div class="fragment" hidden></div>
+<div class="fragment" hidden></div>
+<div class="fragment" hidden></div>
+
+##==##
+
+<!-- .slide: class="transition-black" data-state="stop-code-read-charact" -->
 
 # Heart Rate
 

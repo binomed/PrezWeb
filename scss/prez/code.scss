@@ -1,0 +1,40 @@
+
+$left-first : 60px;
+$left-tab : 100px;
+$line-height : 1.15em;
+$top-code : 90px;
+
+/*
+	GENERIC CONFIGURATION
+*/
+@mixin line($row){
+	top: calc(#{$top-code} + (#{$row} * #{$line-height}));        
+}
+
+@mixin height($row){
+	height: #{$row}.4em;
+}
+
+.highlight-code{
+	background-color: rgba(255,235,59,0.3);
+	height:1.4em;
+	position:absolute;
+	transition-property: all;
+    transition-duration: 0.5s;
+    transition-timing-fonction: linear;
+    left:$left-first;	
+    @include line(0);
+}
+
+
+/*
+	HIGHLIGHT OF CODE !
+*/
+
+#highlight-connect-ble{
+	width:90%;
+}
+
+#highlight-read-charact{
+	width:700px;
+}

@@ -232,6 +232,8 @@ Notes:
 
 # Welcome to the dark side !
 
+![icon](assets/images/ollie.png)
+
 Notes:
 Démo avec le Olie
 

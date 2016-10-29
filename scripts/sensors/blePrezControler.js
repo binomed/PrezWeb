@@ -1,10 +1,12 @@
 'use strict'
 import {MBot} from '../webbluetooth/mbotControler.js';
+import {Ollie} from '../webbluetooth/ollieControler.js';
 
 export class BlePrezControler{
 	constructor(){
 	
 		this._mbotBinding();
+		this._ollieBinding();
 	}
 
 	_mbotBinding(){
@@ -45,6 +47,10 @@ export class BlePrezControler{
 
 				})
 		});
+	}
+
+	_ollieBinding(){
+
 	}
 
 }

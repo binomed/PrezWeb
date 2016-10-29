@@ -166,12 +166,47 @@ Slides explicatives ...
 
 ##==##
 
-<!-- .slide: class="transition-black" -->
+<!-- .slide: class="transition-black" data-state="stop-mbot" -->
 
 # Mbot time
 
+![icon](assets/images/mbot.png)
+
 Notes:
 
+
+##==##
+
+<!-- .slide: class="transition-black" data-state="start-mbot" -->
+
+
+<img src="assets/images/mbot.png" alt="mbot img" id="connectMBot" class="center h-600">
+
+<div id="part-button-mbot">
+      <div class="row">
+          <div class="flex20"></div>
+          <button class="btn flex60" id="mBotBtnUp">
+              <i class="material-icons md-48"><i class="material-icons">keyboard_arrow_up</i></i>
+          </button>
+          <div class="flex20"></div>
+      </div>
+      <div class="row">
+          <button class="btn flex40" id="mBotBtnLeft">
+              <i class="material-icons md-48"><i class="material-icons">keyboard_arrow_left</i></i>
+          </button>
+          <div class="flex20"></div>
+          <button class="btn flex40" id="mBotBtnRight">
+              <i class="material-icons md-48"><i class="material-icons">keyboard_arrow_right</i></i>
+          </button>
+      </div>
+      <div class="row">
+          <div class="flex20"></div>
+          <button class="btn flex60" id="mBotBtnDown">
+              <i class="material-icons md-48"><i class="material-icons">keyboard_arrow_down</i></i>
+          </button>
+          <div class="flex20"></div>
+      </div>
+  </div>
 
 <!--
    ____  _____  _____ ______ _   _ _______    _______ _____ ____  _   _ 
@@ -187,7 +222,7 @@ Notes:
 
 ##==##
 
-<!-- .slide: class="transition-white" -->
+<!-- .slide: class="transition-white" data-state="stop-mbot" -->
 
 # Device Orientation
 

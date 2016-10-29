@@ -142,6 +142,8 @@ Peut être qu'une image serait mieux ?
 
 # On peut faire mieux !
 
+![icon](assets/images/myo.png)
+
 Notes:
 Myo
 
@@ -157,7 +159,11 @@ Myo
 
 ##==##
 
-<!-- .slide: class="transition-white" -->
+<img src="assets/images/myo.png" alt="myo img" id="connectMyo" class="center">
+
+##==##
+
+<!-- .slide: class="transition-white" data-state="end-myo" -->
 
 # Physical Web
 

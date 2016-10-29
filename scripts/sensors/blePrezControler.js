@@ -1,12 +1,34 @@
 'use strict'
+import {MyoControler} from '../webbluetooth/myoControler.js';
 import {MBot} from '../webbluetooth/mbotControler.js';
 import {Ollie} from '../webbluetooth/ollieControler.js';
 
 export class BlePrezControler{
 	constructor(){
 	
+		this._myoBinding();
 		this._mbotBinding();
 		this._ollieBinding();
+	}
+
+	_myoBinding(){
+		let lastDoubleTap = 0;
+		document.getElementById('connectMyo').addEventListener('click', ()=>{
+			
+			let myo = new MyoControler();
+			if (myo.connected){
+				myo.connect()
+				.then(()=>myo.init())
+				.then(()=>myo.registerGestures((gesture)=>{
+					if (gesture && gesture.gesture === 'double-tap'){
+						if(Date.now() - lastDoubleTap < 2000){
+							Reveal.next();
+						}
+						lastDoubleTap = Date.now();
+					} 
+				}));
+			}
+		});
 	}
 
 	_mbotBinding(){

@@ -261,15 +261,27 @@ Démo avec le Olie
 
 ##==##
 
-<!-- .slide: class="transition-white" -->
+<!-- .slide: class="transition-white" data-state="end-recognition" -->
 
 # Voice Recognition
 
 ##==##
 
-<!-- .slide: class="transition-black" -->
+<!-- .slide: class="transition-black" data-state="recognition"-->
 
 # My Google Assistant
+
+
+<div id="demoSpeech" style="display: none;">
+    <div class="loading">
+        <div class="item item-1"></div>
+        <div class="item item-2"></div>
+        <div class="item item-3"></div>
+        <div class="item item-4"></div>
+    </div>  
+    <i class="material-icons md-48">mic</i>
+    <p id="speech_input"></p>
+</div>
 
 <!--
   _______ ____  _____      __     __
@@ -284,7 +296,7 @@ Démo avec le Olie
 
 ##==##
 
-<!-- .slide: class="transition-white" -->
+<!-- .slide: class="transition-white" data-state="end-recognition" -->
 
 # What the web can do today !
 

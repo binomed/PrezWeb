@@ -16,8 +16,9 @@ export class RevealEngineEvents{
 			new BlePrezControler();
 
 			// Init Voice and Speech controlers
-			new VoiceRecognitionControler();
-			new SpeechSynthesisControler();
+			this.voiceRecognition = new VoiceRecognitionControler();
+			this.speechSynthesis = new SpeechSynthesisControler();
+			this._voiceEvents();
 		}
 
 		// In al case we init the highlight of code.
@@ -25,6 +26,31 @@ export class RevealEngineEvents{
 
 	}
 
+	_voiceEvents(){
+		Reveal.addEventListener('recognition', ()=>{
+			setTimeout(_=> this._voiceCallBack(),1000);
+		});
+		Reveal.addEventListener('end-recognition', _=>{
+			try{
+				this.voiceRecognition.stop();
+			}catch(e){}
+		})
+	}
+
+	_voiceCallBack(){
+		document.getElementById('demoSpeech').style.display = '';
+		this.voiceRecognition.start((finalStr)=>{
+			document.getElementById('speech_input').innerHTML = finalStr;
+			if (finalStr.indexOf('ChaineToTest') != -1){
+				document.getElementById('demoSpeech').style.display = 'none';
+				this.speechSynthesis.speak('bla bla bla')
+				.then(_=>this._voiceCallBack.bind(this))
+				.catch((error)=>{
+					console.error(error);
+				});
+			}
+		});
+	}
 	
 
 	_initHighlightCode() {

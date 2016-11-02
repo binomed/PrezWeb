@@ -54,15 +54,15 @@ export class BlePrezControler{
 					let btnLeft = document.getElementById('mBotBtnLeft');
 					let btnRight = document.getElementById('mBotBtnRight');
 
-					btnUp.addEventListener('touchstart', _ => { mBot.processMotor(-250, 250) });
-					btnDown.addEventListener('touchstart', _ => { mBot.processMotor(250, -250) });
-					btnLeft.addEventListener('touchstart', _ => { mBot.processMotor(250, 250) });
-					btnRight.addEventListener('touchstart', _ => { mBot.processMotor(-250, -250) });
+					btnUp.addEventListener('mousedown', _ => { mBot.processMotor(-250, 250) });
+					btnDown.addEventListener('mousedown', _ => { mBot.processMotor(250, -250) });
+					btnLeft.addEventListener('mousedown', _ => { mBot.processMotor(250, 250) });
+					btnRight.addEventListener('mousedown', _ => { mBot.processMotor(-250, -250) });
 
-					btnUp.addEventListener('touchend', _ => { mBot.processMotor(0, 0) });
-					btnDown.addEventListener('touchend', _ => { mBot.processMotor(0, 0) });
-					btnLeft.addEventListener('touchend', _ => { mBot.processMotor(0, 0) });
-					btnRight.addEventListener('touchend', _ => { mBot.processMotor(0, 0) });
+					btnUp.addEventListener('mouseup', _ => { mBot.processMotor(0, 0) });
+					btnDown.addEventListener('mouseup', _ => { mBot.processMotor(0, 0) });
+					btnLeft.addEventListener('mouseup', _ => { mBot.processMotor(0, 0) });
+					btnRight.addEventListener('mouseup', _ => { mBot.processMotor(0, 0) });
 					
 
 				})

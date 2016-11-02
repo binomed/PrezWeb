@@ -1,14 +1,12 @@
 'use strict'
 import {MyoControler} from '../webbluetooth/myoControler.js';
 import {MBot} from '../webbluetooth/mbotControler.js';
-import {Ollie} from '../webbluetooth/ollieControler.js';
 
 export class BlePrezControler{
 	constructor(){
 	
 		this._myoBinding();
 		this._mbotBinding();
-		this._ollieBinding();
 	}
 
 	_myoBinding(){
@@ -69,10 +67,6 @@ export class BlePrezControler{
 
 				})
 		});
-	}
-
-	_ollieBinding(){
-
 	}
 
 }

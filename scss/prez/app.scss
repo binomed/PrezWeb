@@ -1,0 +1,72 @@
+html, body{
+	margin:0;
+	padding:0;
+	min-height:100%;
+	min-width:100%;
+	//display:flex;
+	//flex-direction:column;
+}
+
+
+.mdl-layout__header-row{
+    img{
+        max-height: 90%;
+        margin-right: 20px;
+        left: -50px;
+        position:relative;
+    }
+}
+
+.mdl-layout .mdl-layout__content{
+    display: flex;
+    
+    .page-content{
+        display: flex;
+        flex:1; 
+        justify-content: center;
+        flex-direction: column;
+        
+    }
+    
+    #stepControl{
+        display: flex;
+        flex:1;
+        flex-direction: column; 
+          
+        .row{
+            display: flex;
+            flex-direction: row;   
+            margin: 20px;
+        }
+        
+        
+        .panel-flex{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .mdl-tabs__tab-bar{
+            margin-bottom: 20px;
+        }
+        
+        h2{
+            margin:auto;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+    }
+    
+    
+}
+
+
+.flex20{
+    flex:0.2;
+}
+.flex60{
+    flex:0.6;
+}
+.flex40{
+    flex:0.4;
+}

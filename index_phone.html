@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Super Demo</title>
+    <link rel="stylesheet" type="text/css" href="css/prez/app.css">
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.blue_grey-deep_purple.min.css">
+    <script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+    <link rel="icon" type="image/png" href="./assets/images/HTML5-Super-Hero-Logo1.png">
+</head>
+
+<body>
+    <!-- Always shows a header, even in smaller screens. -->
+
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        <header class="mdl-layout__header">
+            <div class="mdl-layout__header-row">
+                <!-- Title -->
+                <img src="./assets/images/HTML5-Super-Hero-Logo1.png">
+                <span class="mdl-layout-title">Super Demo</span>
+
+            </div>
+        </header>
+        <div class="mdl-layout__content">
+            <div class="page-content">
+                <section id="stepControl" >
+                    <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+                        <div class="mdl-tabs__tab-bar">
+                            <a href="#ollie-panel" class="mdl-tabs__tab is-active">Ollie</a>
+                            <a href="#webnfc-panel" class="mdl-tabs__tab">WebNFC</a>
+                        </div>
+
+                        <div class="mdl-tabs__panel is-active" id="ollie-panel">
+                            <div class="panel-flex">
+                                <h2 class="mdl-card__title-text">Move your Ollie</h2>
+                                <div class="part-button"id="rowConnectOllie">
+                                    <div class="row">
+                                        <div class="flex20"></div>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect flex60" id="btnConnect">
+                                            Connect
+                                        </button>
+                                        <div class="flex20"></div>
+                                    </div>
+                                </div>
+                                <div class="part-button" id="rowControlOllie" style="display:none;">
+                                    <div class="row" >
+                                        <div class="flex20"></div>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect flex60" id="btnUp">
+                                            Up
+                                        </button>
+                                        <div class="flex20"></div>
+                                    </div>
+                                    <div class="row">
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect flex40" id="btnLeft">
+                                            Left
+                                        </button>
+                                        <div class="flex20"></div>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect flex40" id="btnRight">
+                                            Right
+                                        </button>
+                                    </div>
+                                    <div class="row">
+                                        <div class="flex20"></div>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect flex60" id="btnDown">
+                                            Down
+                                        </button>
+                                        <div class="flex20"></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="flex20"></div>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect flex60" id="btnOrientation">
+                                            Activate Orientation
+                                        </button>
+                                        <div class="flex20"></div>
+                                    </div>
+                                     <div class="row">
+                                        <div class="flex20"></div>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect flex60" id="btnStopOrientation">
+                                            Stop Orientation
+                                        </button>
+                                        <div class="flex20"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mdl-tabs__panel" id="webnfc-panel">
+                            <div class="panel-flex">
+                                <h2 class="mdl-card__title-text">Push messages</h2>
+                            </div>
+                            <div class="part-button" >
+                                    <div class="row" >
+                                        <div class="flex20"></div>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect flex60" id="btnNfcTag">
+                                            Write on Tag
+                                        </button>
+                                        <div class="flex20"></div>
+                                    </div>
+                                    <div class="row" >
+                                        <div class="flex20"></div>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect flex60" id="btnNfcACS">
+                                            Write on ACS
+                                        </button>
+                                        <div class="flex20"></div>
+                                    </div>                                    
+                                </div>
+                            </div>
+                        </div>                       
+                    </div>
+
+
+
+
+
+                </section>
+            </div>
+        </div>
+    </div>
+    <script src="./app_phone_bundle.js"></script>
+</body>
+
+</html>

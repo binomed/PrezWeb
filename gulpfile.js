@@ -15,14 +15,14 @@ var reload = browserSync.reload;
 
 var extensions = ['.js','.json','.es6'];
 
-gulp.task('serve',['browserify','sass'], function(){
+gulp.task('serve',['browserify_prez', 'browserify_phone','sass'], function(){
   browserSync.init({
     server:'./'
   });
   gulp.watch("./scss/**/*.scss", ['sass']);
   gulp.watch("./*.html").on('change', reload);
   gulp.watch("./assets/**/*.md").on('change', reload);
-  gulp.watch("./scripts/**/*.js",['browserify']);
+  gulp.watch("./scripts/**/*.js",['browserify_prez', 'browserify_phone']);
   gulp.watch("./prez_bundle.js").on('change', reload);
 });
 
@@ -37,13 +37,25 @@ gulp.task('sass',function(){
     .pipe(reload({stream:true}));  
 });
 
-gulp.task('browserify',function(){
+gulp.task('browserify_prez',function(){
   return browserify({entries: './scripts/prez.js', debug:true, extensions: extensions})
     .transform(babelify)
     .on('error', gutil.log)    
     .bundle()    
     .on('error', gutil.log)    
     .pipe(source('prez_bundle.js'))
+    .pipe(gulp.dest('./'));
+});
+
+
+
+gulp.task('browserify_phone',function(){
+  return browserify({entries: './scripts/app_phone.js', debug:true, extensions: extensions})
+    .transform(babelify)
+    .on('error', gutil.log)    
+    .bundle()    
+    .on('error', gutil.log)    
+    .pipe(source('app_phone_bundle.js'))
     .pipe(gulp.dest('./'));
 });
 

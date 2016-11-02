@@ -37,6 +37,7 @@ jspm_packages
 .node_repl_history
 
 prez_bundle.js
+app_phone_bundle.js
 
 yarn.lock
 

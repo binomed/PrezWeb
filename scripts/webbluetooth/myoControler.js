@@ -12,24 +12,24 @@ class MyoConfig{
 
 }
 
-export class MyoController{
+export class MyoControler{
     constructor(){
         this.device = null;
-        this.config = new Config();
+        this.config = new MyoConfig();
         this.onDisconnected = this.onDisconnected.bind(this);
         this.enableGesturesCommand = new Uint8Array(5);
-        enableGesturesCommand[0] = 0x01; // set mode
-        enableGesturesCommand[1] = 0x03; // bytes in payload
-        enableGesturesCommand[2] = 0x00; // emg mode: none
-        enableGesturesCommand[3] = 0x00; // imu mode: disabled
-        enableGesturesCommand[4] = 0x01; // classifier mode: enabled
+        this.enableGesturesCommand[0] = 0x01; // set mode
+        this.enableGesturesCommand[1] = 0x03; // bytes in payload
+        this.enableGesturesCommand[2] = 0x00; // emg mode: none
+        this.enableGesturesCommand[3] = 0x00; // imu mode: disabled
+        this.enableGesturesCommand[4] = 0x01; // classifier mode: enabled
 
-        this.disableGesturesCommand = Uint8Array.from(enableGesturesCommand);
-        disableGesturesCommand[4] = 0x00; // classifier mode: disabled
+        this.disableGesturesCommand = Uint8Array.from(this.enableGesturesCommand);
+        this.disableGesturesCommand[4] = 0x00; // classifier mode: disabled
 
         this.deepSleepCommand = new Uint8Array(2);
-        deepSleepCommand[0] = 0x04; // set mode
-        deepSleepCommand[1] = 0x00; // bytes in payload
+        this.deepSleepCommand[0] = 0x04; // set mode
+        this.deepSleepCommand[1] = 0x00; // bytes in payload
 
         this.connected = false;
     }

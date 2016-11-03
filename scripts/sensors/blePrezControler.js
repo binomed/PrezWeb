@@ -14,8 +14,9 @@ export class BlePrezControler{
 		document.getElementById('connectMyo').addEventListener('click', ()=>{
 			
 			let myo = new MyoControler();
-			if (myo.connected){
-				myo.connect()
+			if (!myo.connected){
+				myo.request()
+				.then(_=>myo.connect())
 				.then(()=>myo.init())
 				.then(()=>myo.registerGestures((gesture)=>{
 					if (gesture && gesture.gesture === 'double-tap'){

@@ -32,6 +32,8 @@ export class MyoControler{
         this.deepSleepCommand[1] = 0x00; // bytes in payload
 
         this.connected = false;
+        this.eltPopup = null;
+        this
     }
 
     /*
@@ -68,7 +70,9 @@ export class MyoControler{
         if(!this.device){
             return Promise.reject('Device is not connected.');
         }else{
-            
+            if (!this.eltPopup){
+                this._managePopupElt({state : 'add'});                
+            }
             return this.device.gatt.getPrimaryService(this.config.controlService())
             .then((service)=>{
                  console.log('> get Myo Control Service');
@@ -113,11 +117,13 @@ export class MyoControler{
         if (!this.device) {
             return Promise.reject('Device is not connected.');
         } else {
+            this._managePopupElt({state : 'remove'});
             return this.device.gatt.disconnect();
         }
     }
 
     onDisconnected() {
+        this._managePopupElt({state : 'remove'});
         this.connected = false;
         console.log('Device is disconnected.');
     }
@@ -134,8 +140,22 @@ export class MyoControler{
                 0x0005: 'double-tap',
                 0xffff: 'unknown',
             }[gestureValue]
+            this._managePopupElt({gesture : gesture});
             return { gesture }
         }
         return { gesture: null }
+    }
+
+    _managePopupElt({state= 'none', gesture = 'none'}){
+        if (state === 'remove' && this.eltPopup){
+            this.eltPopup.remove();
+            this.eltPopup = null;
+        }else if (state === 'add'){
+            this.eltPopup = document.createElement('div');
+            this.eltPopup.classList.add('myo-popup');
+            document.body.appendChild(this.eltPopup);
+        }else if (this.eltPopup && gesture && gesture != 'none'){
+            this.eltPopup.class = `myo-popup ${gesture}`;
+        }
     }
 }

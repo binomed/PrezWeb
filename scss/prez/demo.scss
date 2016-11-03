@@ -79,3 +79,61 @@ $load-colors: #3A8DF2, #E14E39, #FCC000, #3AA05C;
 		transform: translateY(-13px);
 	}
 }
+
+
+/*
+* Myo Popup
+*/
+
+$size-myo-popup : 150px;
+
+.myo-popup{
+    position: fixed;
+    bottom: 50px;
+    right: $size-myo-popup;
+    width: $size-myo-popup;
+    height: $size-myo-popup;
+    background: rgba(61, 61, 61, 0.8);
+    border-radius: 10px;
+}
+
+
+.myo-popup.rest:after, .myo-popup.fist:after, .myo-popup.wave-in:after,
+.myo-popup.wave-out:after, .myo-popup.fingers-spread:after, .myo-popup.double-tap:after, 
+.myo-popup.unknown:after{
+    content: '';
+    position: absolute;
+    width: $size-myo-popup;
+    height: $size-myo-popup;
+    top: 50%;
+    left: 50%;
+    margin-left: -$size-myo-popup / 2;
+    margin-top: -$size-myo-popup / 2;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.myo-popup.rest:after{
+    background-image: url(/assets/images/myo_pan.png);
+}
+
+.myo-popup.fist:after{
+    background-image: url(/assets/images/myo_fist.png);
+}
+
+.myo-popup.wave-in:after{
+    background-image: url(/assets/images/myo_wave_left.png);
+}
+
+.myo-popup.wave-out:after{
+    background-image: url(/assets/images/myo_right.png);
+}
+
+.myo-popup.fingers-spread:after{
+    background-image: url(/assets/images/myo_spread_fingers.png);
+}
+
+.myo-popup.double-tap:after{
+    background-image: url(/assets/images/myo_double_tap.png);
+}
+

@@ -6,7 +6,8 @@ export class BlePrezControler{
 	constructor(){
 	
 		this._myoBinding();
-		this._mbotBinding();
+		// Just comment mbot part because it can always be usefull !
+		//this._mbotBinding();
 	}
 
 	_myoBinding(){

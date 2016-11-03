@@ -111,6 +111,127 @@ blablabla
 Notes:
 Image de What the web can do
 
+<!--
+   _____ _____  ______ ______ _____ _    _ 
+  / ____|  __ \|  ____|  ____/ ____| |  | |
+ | (___ | |__) | |__  | |__ | |    | |__| |
+  \___ \|  ___/|  __| |  __|| |    |  __  |
+  ____) | |    | |____| |___| |____| |  | |
+ |_____/|_|    |______|______\_____|_|  |_|
+                                           
+-->
+
+##==##
+
+<!-- .slide: class="transition-white" -->
+
+# Speech Synthesis
+
+##==## 
+
+<!-- .slide: class="with-code" data-state="code-web-speech stop-code-web-speech-gramar"  -->
+
+## Web Speech - Utilisation 
+
+```javascript
+var recognition = new SpeechRecognition();
+recognition.lang = voiceFR;
+recognition.continuous = true;
+recognition.interimResults = true;
+
+recognition.start();
+recognition.onresult = function(event) {
+  var finalStr = event.results[0][0].transcript;
+  console.log('Confidence: ' + finalStr); 
+}
+```
+
+<div id="highlight-web-speech" class="highlight-code"></div>  
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+<div class="fragment" data-fragment-index="2" hidden></div>
+<div class="fragment" data-fragment-index="3" hidden></div>
+<div class="fragment" data-fragment-index="4" hidden></div>
+<div class="fragment" data-fragment-index="5" hidden></div>
+<div class="fragment" data-fragment-index="6" hidden></div>
+
+##==##
+
+<!-- .slide: class="with-code" data-state="stop-code-web-speech code-web-speech-grammar stop-code-web-speech-synthesis" -->
+
+## Web Speech - Grammar
+
+```javascript
+var grammar = '#JSGF V1.0; grammar colors; public <color> = aqua | [MORE COLOURS] ;'
+var recognition = new SpeechRecognition();
+var speechRecognitionList = new SpeechGrammarList();
+speechRecognitionList.addFromString(grammar, 1);
+recognition.grammars = speechRecognitionList;
+//recognition.continuous = false;
+recognition.lang = 'en-US';
+recognition.interimResults = false;
+recognition.maxAlternatives = 1;
+```
+
+
+<div id="highlight-web-speech-grammar" class="highlight-code"></div>  
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+<div class="fragment" data-fragment-index="2" hidden></div>
+<div class="fragment" data-fragment-index="3" hidden></div>
+
+
+##==##
+
+<!-- .slide: class="transition-white" data-state="stop-code-web-speech-grammar stop-code-web-speech-synthesis" -->
+
+# Voice Recognition
+
+##==##
+
+<!-- .slide: data-state="end-recognition code-web-speech-synthesis" class="with-code" -->
+
+## Web Speech Synthesis
+
+```javascript
+var synth = window.speechSynthesis;
+
+var utterThis = new SpeechSynthesisUtterance(inputTxt.value);
+utterThis.voice = 'fr-FR';
+utterThis.pitch = pitch.value;
+utterThis.rate = rate.value;
+synth.speak(utterThis);
+```
+
+
+<div id="highlight-web-speech-synthesis" class="highlight-code"></div>  
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+<div class="fragment" data-fragment-index="2" hidden></div>
+<div class="fragment" data-fragment-index="3" hidden></div>
+<div class="fragment" data-fragment-index="4" hidden></div>
+<div class="fragment" data-fragment-index="5" hidden></div>
+
+
+##==##
+
+<!-- .slide: class="transition-black" data-state="recognition stop-code-web-speech-synthesis"-->
+
+# My Google Assistant
+
+
+<div id="demoSpeech" style="display: none;">
+    <div class="loading">
+        <div class="item item-1"></div>
+        <div class="item item-2"></div>
+        <div class="item item-3"></div>
+        <div class="item item-4"></div>
+    </div>  
+    <i class="material-icons md-48">mic</i>
+    <p id="speech_input"></p>
+</div>
+
+
 ##==##
 
 <!--
@@ -296,48 +417,6 @@ Notes:
 
 Notes:
 Démo avec le Olie
-
-<!--
-   _____ _____  ______ ______ _____ _    _ 
-  / ____|  __ \|  ____|  ____/ ____| |  | |
- | (___ | |__) | |__  | |__ | |    | |__| |
-  \___ \|  ___/|  __| |  __|| |    |  __  |
-  ____) | |    | |____| |___| |____| |  | |
- |_____/|_|    |______|______\_____|_|  |_|
-                                           
--->
-
-##==##
-
-<!-- .slide: class="transition-white" -->
-
-# Speech Synthesis
-
-##==##
-
-<!-- .slide: class="transition-white" data-state="end-recognition" -->
-
-# Voice Recognition
-
-##==##
-
-<!-- .slide: class="transition-black" data-state="recognition"-->
-
-# My Google Assistant
-
-
-<div id="demoSpeech" style="display: none;">
-    <div class="loading">
-        <div class="item item-1"></div>
-        <div class="item item-2"></div>
-        <div class="item item-3"></div>
-        <div class="item item-4"></div>
-    </div>  
-    <i class="material-icons md-48">mic</i>
-    <p id="speech_input"></p>
-</div>
-
-
 
 <!--
            ______ _______ ______ _____  

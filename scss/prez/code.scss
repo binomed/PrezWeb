@@ -38,3 +38,41 @@ $top-code : 90px;
 #highlight-read-charact{
 	width:700px;
 }
+
+
+#highlight-user-media-v1{
+	width:500px;
+	top:calc(90px + #{$line-height});
+	left:$left-first;	
+}
+
+#highlight-user-media-v2{
+	width: 600px;
+    top: calc(90px + 10.35em);
+    left: 100px;
+}
+
+#highlight-user-media-v2-2{
+	width: 750px;
+    top: calc(90px + 12.65em);
+    left: 60px;
+    height: 2.4em;
+}
+
+#highlight-web-speech{
+	width: 600px;
+    top: 90px;
+    left: 60px;
+}
+
+#highlight-web-speech-grammar{
+	width: 1200px;
+    top: 90px;
+    left: 60px;
+}
+
+#highlight-web-speech-synthesis{
+	width: 500px;
+    top: 90px;
+    left: 60px;
+}

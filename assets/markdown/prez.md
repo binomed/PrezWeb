@@ -17,35 +17,12 @@
 
 ## Qui sommes nous ?
 
-### François Beaufort
-
-<!-- .element: class="descjf" -->
-une super position de poste
-
-![avatar w-300 wp-200](assets/images/fbeaufort.jpg)
-
-![company_logo](assets/images/google.png)
-
-
-<!-- .element: class="gplus" -->
-[+FrancoisBeafort](http://plus.google.com/+FrancoisBeaufort)
-
-Notes:
-
-##==##
-
-<!-- .slide: class="who-am-i" -->
-
-## Qui sommes nous ?
-
 ### Jean-François Garreau
 
-
 <!-- .element: class="descjf" -->
-Senior innovation developper & Community Manager
+Senior Innovation Developer & Community Manager
 
 ![avatar w-300 wp-200](assets/images/jf.jpg)
-
 
 ![company_logo](assets/images/lucca_logo.png)
 ![gdg_logo](assets/images/GDG-Logo-carre.png)
@@ -56,6 +33,23 @@ Senior innovation developper & Community Manager
 <!-- .element: class="gplus" -->
 [+JeanFrancoisGarreau](http://plus.google.com/+JeanFrancoisGarreau)
 
+##==##
+
+<!-- .slide: class="who-am-i" -->
+
+## Qui sommes nous ?
+
+### François Beaufort
+
+<!-- .element: class="descjf" -->
+Senior Developer Programs Engineer
+
+![avatar w-300 wp-200](assets/images/fbeaufort.jpg)
+
+![company_logo](assets/images/google.png)
+
+<!-- .element: class="gplus" -->
+[+FrancoisBeaufort](http://plus.google.com/+FrancoisBeaufort)
 
 ##==##
 

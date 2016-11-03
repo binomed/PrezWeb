@@ -70,30 +70,30 @@
     img[alt*=company_logo]{
         position: absolute;
         top: 480px;
-        left: 50px;
-        max-width:100px;
+        left: 100px;
+        max-width:200px;
         max-height:100px;
     }
 
     img[alt*=gdg_logo]{
         position: absolute;
-        top: 470px;
-        left: 200px;
-        max-width:100px;
+        top: 580px;
+        left: 100px;
+        max-width:200px;
         max-height:100px;
     }
 
     .twitter{
         position:absolute;
         font-size: 100%;
-        top: 430px;
         left: 350px;
+        top: 500px;
     }
 
     .gplus{
         position:absolute;
         font-size: 100%;
-        top: 500px;
+        top: 430px;
         left: 350px;
     }
 

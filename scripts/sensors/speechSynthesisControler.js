@@ -11,7 +11,7 @@ export class SpeechSynthesisControler{
     _configure(){
         this._populateVoiceList();
         if (speechSynthesis.onvoiceschanged !== undefined) {
-            speechSynthesis.onvoiceschanged = populateVoiceList;
+            speechSynthesis.onvoiceschanged = this._populateVoiceList.bind(this);
         }
     }
 

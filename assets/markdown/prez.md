@@ -75,7 +75,7 @@ Qqes slides d'explication et de code
 
 <!-- .slide: class="with-code" data-state="code-connect-ble stop-code-read-charact" -->
 
-# Connect by name
+## Connect by name
 
 ```javascript
 navigator.bluetooth.requestDevice({ filters: [{ services: ['battery_service'] }] })

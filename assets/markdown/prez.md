@@ -51,6 +51,64 @@ Senior Developer Programs Engineer
 <!-- .element: class="gplus" -->
 [+FrancoisBeaufort](http://plus.google.com/+FrancoisBeaufort)
 
+<!--
+  _______ ____  _____      __     __
+ |__   __/ __ \|  __ \   /\\ \   / /
+    | | | |  | | |  | | /  \\ \_/ / 
+    | | | |  | | |  | |/ /\ \\   /  
+    | | | |__| | |__| / ____ \| |   
+    |_|  \____/|_____/_/    \_\_|   
+                                    
+                   
+-->
+
+##==##
+
+<!-- .slide: class="transition-white" data-state="end-recognition" -->
+
+# What the web can do today !
+
+##==##
+
+## User Media
+
+blablabla
+
+##==##
+
+## Acceleration
+
+blablabla
+
+
+##==##
+
+## Web Midi
+
+blablabla
+
+
+##==##
+
+## Ambiant Light
+
+blablabla
+
+
+##==##
+
+## Payement Api
+
+blablabla
+
+
+##==##
+
+## Bref
+
+Notes:
+Image de What the web can do
+
 ##==##
 
 <!--
@@ -277,63 +335,7 @@ Démo avec le Olie
     <p id="speech_input"></p>
 </div>
 
-<!--
-  _______ ____  _____      __     __
- |__   __/ __ \|  __ \   /\\ \   / /
-    | | | |  | | |  | | /  \\ \_/ / 
-    | | | |  | | |  | |/ /\ \\   /  
-    | | | |__| | |__| / ____ \| |   
-    |_|  \____/|_____/_/    \_\_|   
-                                    
-                   
--->
 
-##==##
-
-<!-- .slide: class="transition-white" data-state="end-recognition" -->
-
-# What the web can do today !
-
-##==##
-
-## User Media
-
-blablabla
-
-##==##
-
-## Acceleration
-
-blablabla
-
-
-##==##
-
-## Web Midi
-
-blablabla
-
-
-##==##
-
-## Ambiant Light
-
-blablabla
-
-
-##==##
-
-## Payement Api
-
-blablabla
-
-
-##==##
-
-## Bref
-
-Notes:
-Image de What the web can do
 
 <!--
            ______ _______ ______ _____  

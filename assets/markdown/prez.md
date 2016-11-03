@@ -51,6 +51,8 @@ Senior Developer Programs Engineer
 <!-- .element: class="gplus" -->
 [+FrancoisBeaufort](http://plus.google.com/+FrancoisBeaufort)
 
+##==##
+
 <!--
   _______ ____  _____      __     __
  |__   __/ __ \|  __ \   /\\ \   / /
@@ -62,7 +64,6 @@ Senior Developer Programs Engineer
                    
 -->
 
-##==##
 
 <!-- .slide: class="transition-white" data-state="end-recognition" -->
 
@@ -70,13 +71,21 @@ Senior Developer Programs Engineer
 
 ##==##
 
-## User Media
+<!-- .slide: class="transition-white all-techno" data-state="end-recognition" -->
 
-blablabla
+<h1>
+ambiant light <span>acceleration</span> battery <span>proximity</span> webworker <span>streamapi</span> 
+serviceworker <span> notifications</span> background sync <span>indexedDB</span> webrtc </span>visibility</span> 
+push notifications <span>home screen installation</span> reccording media <span>vibration</span> 
+fullscreen <span>file access</span> geolocalisation <span>network speed</span> offline <span>clipboard</span>
+online state <span>offline storage</span> PWA</h1>
+
+Notes:
+Aujourd'hui, on ne parlera pas de ça !
 
 ##==##
 
-## Acceleration
+## User Media
 
 blablabla
 
@@ -84,13 +93,6 @@ blablabla
 ##==##
 
 ## Web Midi
-
-blablabla
-
-
-##==##
-
-## Ambiant Light
 
 blablabla
 

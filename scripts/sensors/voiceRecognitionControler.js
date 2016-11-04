@@ -24,9 +24,7 @@ export class VoiceRecognitionControler{
     }
 
     _configure(){
-        this.recognition.continuous = true;
         this.recognition.lang = 'fr-FR';
-        this.recognition.interimResults = true;
 
         // We detect end
         this.recognition.onend = _=>{

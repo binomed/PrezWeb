@@ -50,7 +50,7 @@ export class RevealEngineEvents{
 		document.getElementById('demoSpeech').style.display = '';
 		this.voiceRecognition.start((finalStr)=>{
 			document.getElementById('speech_input').innerHTML = finalStr;
-			if (finalStr.indexOf('ChaineToTest') != -1){
+			if (finalStr.indexOf('hello') != -1){
 				document.getElementById('demoSpeech').style.display = 'none';
 				this.speechSynthesis.speak('bla bla bla')
 				.then(_=>this._voiceCallBack.bind(this))

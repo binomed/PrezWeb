@@ -65,20 +65,20 @@ Senior Developer Programs Engineer
 -->
 
 
-<!-- .slide: class="transition-white" data-state="end-recognition" -->
+<!-- .slide: class="transition-white" -->
 
 # What the web can do today !
 
 ##==##
 
-<!-- .slide: class="transition-white all-techno" data-state="end-recognition" -->
+<!-- .slide: class="transition-white all-techno" -->
 
 <h1>
 ambiant light <span>acceleration</span> battery <span>proximity</span> webworker <span>streamapi</span> 
 serviceworker <span> notifications</span> background sync <span>indexedDB</span> webrtc </span>visibility</span> 
 push notifications <span>home screen installation</span> reccording media <span>vibration</span> 
 fullscreen <span>file access</span> geolocalisation <span>network speed</span> offline <span>clipboard</span>
-online state <span>offline storage</span> PWA</h1>
+online state <span>offline storage</span> PWA <span>web midi</span></h1>
 
 Notes:
 Aujourd'hui, on ne parlera pas de ça !
@@ -217,24 +217,9 @@ Toujours besoin de adapter.js pour faire marcher correctement !
 
 ##==##
 
-## Web Midi
-
-blablabla
-
-
-##==##
-
 ## Payement Api
 
 blablabla
-
-
-##==##
-
-## Bref
-
-Notes:
-Image de What the web can do
 
 <!--
    _____ _____  ______ ______ _____ _    _ 
@@ -260,7 +245,7 @@ Image de What the web can do
 
 ```javascript
 var recognition = new SpeechRecognition();
-recognition.lang = voiceFR;
+recognition.lang = 'fr-FR';
 recognition.continuous = true;
 recognition.interimResults = true;
 
@@ -370,7 +355,7 @@ synth.speak(utterThis);
                                                   
 -->
 
-<!-- .slide: class="transition-white" data-state="ble stop-code-recognition" -->
+<!-- .slide: class="transition-white" data-state="ble stop-code-recognition end-recognition" -->
 
 # Web Bluetooth
 
@@ -520,16 +505,6 @@ Myo
 Notes:
 Slides explicatives ...
 
-##==##
-
-<!-- .slide: class="transition-black" data-state="stop-mbot" -->
-
-# Mbot time
-
-![icon](assets/images/mbot.png)
-
-Notes:
-
 
 ##==##
 
@@ -563,35 +538,6 @@ Notes:
           <div class="flex20"></div>
       </div>
   </div>
-
-<!--
-   ____  _____  _____ ______ _   _ _______    _______ _____ ____  _   _ 
-  / __ \|  __ \|_   _|  ____| \ | |__   __|/\|__   __|_   _/ __ \| \ | |
- | |  | | |__) | | | | |__  |  \| |  | |  /  \  | |    | || |  | |  \| |
- | |  | |  _  /  | | |  __| | . ` |  | | / /\ \ | |    | || |  | | . ` |
- | |__| | | \ \ _| |_| |____| |\  |  | |/ ____ \| |   _| || |__| | |\  |
-  \____/|_|  \_\_____|______|_| \_|  |_/_/    \_\_|  |_____\____/|_| \_|
-                                                                        
-        
--->
-
-
-##==##
-
-<!-- .slide: class="transition-white" data-state="stop-mbot" -->
-
-# Device Orientation
-
-##==##
-
-<!-- .slide: class="transition-black" -->
-
-# Welcome to the dark side !
-
-![icon](assets/images/ollie.png)
-
-Notes:
-Démo avec le Olie
 
 <!--
            ______ _______ ______ _____  

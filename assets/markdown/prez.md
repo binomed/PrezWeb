@@ -586,59 +586,67 @@ Trouver une image !
 
 <!-- .slide: class="transition-white" -->
 
-PUSH <br> WATCH  <br> PEER2PEER
+# PUSH <br><br> WATCH  <br><br> PEER2PEER
 
 
 ##==##
 
-<!-- .slide: class="transition-white" -->
+<!-- .slide: class="transition-white" data-state="stop-code-write-nfc" -->
 
-WRITE JSON <br><br> WRITE NDEF
+# WRITE JSON <br><br> WRITE NDEF
 
 ##==##
 
-<!-- .slide: class="with-code" -->
+<!-- .slide: class="with-code" data-state="code-write-nfc stop-code-read-nfc" -->
 
 ## Push message
 
 ```javascript
 navigator.nfc.push({
-    data: [{ recordType: "url", data: "https://jef.binomed.fr" }]
+    data: [{ recordType: "url", data: "https://devfest.gdgnantes.com" }]
   }).then(() => {
     console.log("Message pushed.");
-  }).catch((error) => {
-    console.log("Push failed :-( try again.");
   });
 ```
 
 
+<div id="highlight-write-nfc" class="highlight-code"></div>
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+
+
+Notes:
+L'exemple ici présente un message ndef !
+
+
 ##==##
 
-<!-- .slide: class="with-code" -->
+<!-- .slide: class="with-code" data-state="stop-code-write-nfc code-read-nfc" -->
 
 ## Read message
 
 ```javascript
 navigator.nfc.watch((message) => {
-		if (message.data[0].recordType == 'empty') {
-			navigator.nfc.push({
-			  url: "/custom/path",
-			  data: [{ recordType: "text", data: 'Hello World' }]
-			});
-		} else {
-			console.log('Read message written by ' + message.url);
-			processMessage(message);
-		}
-	}).then(() => {
-		console.log("Added a watch.");
-	}).catch((error) => {
-		console.log("Adding watch failed: " + error.name);
+		for (let record of message.data) {
+      console.log("Record type:  " + record.recordType);
+      console.log("MIME type:    " + record.mediaType);
+      console.log("=== data ===\n" + record.data);
+    }
 	});
 ```
 
+<div id="highlight-read-nfc" class="highlight-code"></div>
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+<div class="fragment" data-fragment-index="2" hidden></div>
+<div class="fragment" data-fragment-index="3" hidden></div>
+
+Notes:
+ça marche pas encore
+
 ##==##
 
-<!-- .slide: class="transition-black" -->
+<!-- .slide: class="transition-black" data-state="stop-code-read-nfc" -->
 
 # let's write some tags !
 

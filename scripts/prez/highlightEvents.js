@@ -163,5 +163,39 @@ export class HighlightEvents{
 			}
 			]});
 
+
+	// Code write nfc
+	new HighlightCodeHelper({
+			keyElt : 'write-nfc', 
+			positionArray : [
+			{
+				row : 1,
+				col : 1,
+				width : '1050px'
+			}
+			]});
+	
+	// Code read nfc
+	new HighlightCodeHelper({
+			keyElt : 'read-nfc', 
+			positionArray : [
+			{
+				row : 0,
+				left: '330px',
+				width : '150px'
+			},
+			{
+				row : 1,
+				col : 3,
+				width : '550px'
+			},
+			{
+				row : 2,
+				left: '550px',
+				calcHeight: 3,
+				width : '300px'
+			}
+			]});
+
 	}
 }

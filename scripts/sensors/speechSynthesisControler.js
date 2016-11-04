@@ -25,7 +25,6 @@ export class SpeechSynthesisControler{
         }
     }
 
-
     speak(value) {
         return new Promise((resolve, reject) =>{
 

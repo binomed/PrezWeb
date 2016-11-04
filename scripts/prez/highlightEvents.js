@@ -65,30 +65,23 @@ export class HighlightEvents{
 
 	// Code User Media 1
 	new HighlightCodeHelper({
-			keyElt : 'user-media-v1',
+			keyElt : 'user-media-v2',
 			positionArray: [
 			{
-				row : 12,
-				col : 0,
-				width : '1100px',
+				row : 3,
+				width : '700px',
 				height : '1.4em'
 			},
 			{
-				row : 7,
-				left : '190px',
-				width : '210px',
+				row : 4,
+				left : '150px',
+				width : '100px',
 				height : '1.4em'
 			},
 			{
-				row : 7,
-				left : '400px',
-				width : '90px',
-				height : '1.4em'
-			},
-			{
-				row : 9,
+				row : 5,
 				left : '100px',
-				width : '800px',
+				width : '700px',
 				height : '2.4em'
 			}
 			]});

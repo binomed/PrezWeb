@@ -157,58 +157,27 @@ Notes:
 
 ##==##
 
-<!-- .slide: class="with-code" data-state="code-user-media-v1" -->
-
-## User Media - V1
-
-
-```javascript
-// We define the video constraints
-var constraints = {video: true};
-// We manage an error while getting the stream
-function handleUserMediaError(error){
-  console.log('navigator.getUserMedia error: ', error);
-}
-// We manage the success of getting the stream
-function handleUserMedia(stream){
-  localStream = stream;
-  video.src = window.URL.createObjectURL(stream);
-  video.play();
-}
-navigator.getUserMedia(constraints, handleUserMedia, handleUserMediaError);
-```
-
-<div id="highlight-user-media-v1" class="highlight-code"></div>  
-
-<div class="fragment" data-fragment-index="1" hidden></div>
-<div class="fragment" data-fragment-index="2" hidden></div>
-<div class="fragment" data-fragment-index="3" hidden></div>
-<div class="fragment" data-fragment-index="4" hidden></div>
-
-##==##
-
-<!-- .slide: class="with-code" data-state="stop-code-user-media-v1" -->
+<!-- .slide: class="with-code" data-state="code-user-media-v2" -->
 
 ## User Media - V2
 
 ```javascript
 // We define the video constraints
 var constraints = {video: true};
-// We manage an error while getting the stream
-function handleUserMediaError(error){
-  console.log('navigator.getUserMedia error: ', error);
-}
-// We manage the success of getting the stream
-function handleUserMedia(stream){
-  video.src = window.URL.createObjectURL(stream);
-  video.onloadedmetadata = (e)=>video.play();
-}
+
 navigator.mediaDevices.getUserMedia(constraints)
-  .then(handleUserMedia).catch(handleUserMediaError);
+.then((stream)=>{
+    video.srcObject = stream;
+    video.onloadedmetadata = (e)=>video.play();
+})
 ```
 
 <div id="highlight-user-media-v2" class="highlight-code"></div>  
-<div id="highlight-user-media-v2-2" class="highlight-code"></div>  
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+<div class="fragment" data-fragment-index="2" hidden></div>
+<div class="fragment" data-fragment-index="3" hidden></div>
+  
 
 Notes:
 Toujours besoin de adapter.js pour faire marcher correctement ! 
@@ -216,6 +185,8 @@ Toujours besoin de adapter.js pour faire marcher correctement !
 
 
 ##==##
+
+<!-- .slide: data-state="stop-code-user-media-v2" -->
 
 ## Payement Api
 

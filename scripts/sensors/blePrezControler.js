@@ -37,7 +37,7 @@ export class BlePrezControler{
 
 	_myoBinding(){
 		let lastDoubleTap = 0;
-		let myo = new MyoController();
+		let myo = new MyoControler();
 		document.getElementById('connectMyo').addEventListener('click', ()=>{
 			
 			if (!myo.connected){

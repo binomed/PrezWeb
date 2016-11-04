@@ -151,11 +151,14 @@ export class MyoControler{
             this.eltPopup.remove();
             this.eltPopup = null;
         }else if (state === 'add'){
+            if (this.eltPopup){
+                this.eltPopup.remove();
+            }
             this.eltPopup = document.createElement('div');
             this.eltPopup.classList.add('myo-popup');
             document.body.appendChild(this.eltPopup);
         }else if (this.eltPopup && gesture && gesture != 'none'){
-            this.eltPopup.class = `myo-popup ${gesture}`;
+            this.eltPopup.className = `myo-popup ${gesture}`;
         }
     }
 }

@@ -29,7 +29,6 @@ export class RevealEngineEvents{
 
 	_bleEvents(){
 		Reveal.addEventListener('stop-code-read-charact', event => {
-			console.log(event);
 			if (this._blePrezControler._currentBleDevice) {
 				this._blePrezControler._currentBleDevice.gatt.disconnect();
 			}

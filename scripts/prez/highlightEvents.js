@@ -34,6 +34,33 @@ export class HighlightEvents{
 			}]
 		})
 
+		//  Ble Code Write Characteristic
+		new HighlightCodeHelper({
+			keyElt : 'write-charact',
+			// We start with the first fragment (the initial position is fixed by css)
+			positionArray : [{
+				row : 3,
+				width : '90%'
+			}, {
+				row : 8,
+				width : '90%'
+			}]
+		})
+
+		//  Ble Code Read Characteristic
+		new HighlightCodeHelper({
+			keyElt : 'notif-charact',
+			// We start with the first fragment (the initial position is fixed by css)
+			positionArray : [{
+				row : 3,
+				width : '90%'
+			}, {
+				row : 5,
+				width : '90%',
+				height: '186px'
+			}]
+		})
+
 
 
 	// Code User Media 1

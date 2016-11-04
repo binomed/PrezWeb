@@ -65,31 +65,31 @@ export class HighlightEvents{
 
 	// Code User Media 1
 	new HighlightCodeHelper({
-			keyElt : 'highlight-user-media-v1',
+			keyElt : 'user-media-v1',
 			positionArray: [
 			{
-				'top' : 'calc(90px + 13.8em)',
-				'left' : '60px',
-				'width' : '1000px',
-				'height' : '1.4em'
+				row : 12,
+				col : 0,
+				width : '1100px',
+				height : '1.4em'
 			},
 			{
-				'top' : 'calc(90px + 7.75em)',
-				'left' : '180px',
-				'width' : '210px',
-				'height' : '1.4em'
+				row : 7,
+				left : '190px',
+				width : '210px',
+				height : '1.4em'
 			},
 			{
-				'top' : 'calc(90px + 7.75em)',
-				'left' : '380px',
-				'width' : '90px',
-				'height' : '1.4em'
+				row : 7,
+				left : '400px',
+				width : '90px',
+				height : '1.4em'
 			},
 			{
-				'top' : 'calc(90px + 10.35em)',
-				'left' : '100px',
-				'width' : '800px',
-				'height' : '2.4em'
+				row : 9,
+				left : '100px',
+				width : '800px',
+				height : '2.4em'
 			}
 			]});
 

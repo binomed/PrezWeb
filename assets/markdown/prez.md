@@ -85,9 +85,134 @@ Aujourd'hui, on ne parlera pas de ça !
 
 ##==##
 
+<!-- .slide: class="transition-white" -->
+
+# User Media
+
+![icon](./assets/images/camera_icon.png)
+
+##==##
+
+<!-- .slide: data-type-show="full" -->
+
 ## User Media
 
-blablabla
+* Encore dépendant des navigateurs !
+
+* Possibilité de préciser ce qu'on récupère et on peut séparer les flux ! 
+* Sélection de la source / Récupération de l'audio
+* Devient intéressant s'il est mixé avec des effets ou des canvas.
+* **HTTPS** only ! 
+* 2 versions l'api
+
+##==##
+
+<!-- .slide: class="with-code" -->
+
+## User Media
+
+```javascript
+var vgaConstraints = {
+  video: {
+    mandatory: {
+      maxWidth: 640,
+      maxHeight: 360
+    }
+  }
+};
+```
+
+Notes:
+* Encore dépendant des navigateurs !
+* Possibilité de préciser ce qu'on récupère et on peut séparer les flux ! 
+* Sélection de la source / Récupération de l'audio
+* Devient intéressant s'il est mixé avec des effets ou des canvas.
+* **HTTPS** only ! 
+* 2 versions l'api
+
+##==##
+
+<!-- .slide: data-type-show="full" data-state="stop-code-user-media-v1"  -->
+
+## User Media
+
+### Différence entre les 2 versions ?
+
+* V1 : approche événementielle
+* V2 : approche avec des promises et simplifie le fonctionnement de récupération des objets associés (plus récent => moins de compatibilités)
+
+Notes:
+
+##==##
+
+<!-- .slide:  class="transition-white"  data-type-show="prez" data-state="stop-code-user-media-v1" -->
+
+# 2 Versions !
+
+
+Notes:
+* V1 : approche événementielle
+* V2 : approche avec des promises et simplifie le fonctionnement de récupération des objets associés (plus récent => moins de compatibilités)
+
+
+##==##
+
+<!-- .slide: class="with-code" data-state="code-user-media-v1" -->
+
+## User Media - V1
+
+
+```javascript
+// We define the video constraints
+var constraints = {video: true};
+// We manage an error while getting the stream
+function handleUserMediaError(error){
+  console.log('navigator.getUserMedia error: ', error);
+}
+// We manage the success of getting the stream
+function handleUserMedia(stream){
+  localStream = stream;
+  video.src = window.URL.createObjectURL(stream);
+  video.play();
+}
+navigator.getUserMedia(constraints, handleUserMedia, handleUserMediaError);
+```
+
+<div id="highlight-user-media-v1" class="highlight-code"></div>  
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+<div class="fragment" data-fragment-index="2" hidden></div>
+<div class="fragment" data-fragment-index="3" hidden></div>
+<div class="fragment" data-fragment-index="4" hidden></div>
+
+##==##
+
+<!-- .slide: class="with-code" data-state="stop-code-user-media-v1" -->
+
+## User Media - V2
+
+```javascript
+// We define the video constraints
+var constraints = {video: true};
+// We manage an error while getting the stream
+function handleUserMediaError(error){
+  console.log('navigator.getUserMedia error: ', error);
+}
+// We manage the success of getting the stream
+function handleUserMedia(stream){
+  video.src = window.URL.createObjectURL(stream);
+  video.onloadedmetadata = (e)=>video.play();
+}
+navigator.mediaDevices.getUserMedia(constraints)
+  .then(handleUserMedia).catch(handleUserMediaError);
+```
+
+<div id="highlight-user-media-v2" class="highlight-code"></div>  
+<div id="highlight-user-media-v2-2" class="highlight-code"></div>  
+
+Notes:
+Toujours besoin de adapter.js pour faire marcher correctement ! 
+
 
 
 ##==##

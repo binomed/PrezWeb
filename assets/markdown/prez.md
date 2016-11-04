@@ -303,7 +303,58 @@ device.gatt.getPrimaryService('battery_service')
 
 ##==##
 
-<!-- .slide: id="heartRateDemo" class="transition-black" data-state="heart-rate-demo stop-code-read-charact" -->
+<!-- .slide: id="writeCharact" class="with-code" data-state="code-write-charact stop-code-read-charact" -->
+
+## Write characteristic value
+
+```javascript
+// Get GAP Service...
+device.gatt.getPrimaryService('generic_access')
+// Get Device Name Characteristic...
+.then(service => service.getCharacteristic('gap.device_name'))
+// Rename device...
+.then(characteristic => {
+  const textEncoder = new TextEncoder();
+  const newDeviceName = textEncoder.encode('PloumPloum');
+  return characteristic.writeValue(newDeviceName);
+});
+```
+
+<div id="highlight-write-charact" class="highlight-code"></div>
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+<div class="fragment" data-fragment-index="2" hidden></div>
+
+##==##
+
+<!-- .slide: id="notifCharact" class="with-code" data-state="code-notif-charact stop-code-write-charact" -->
+
+## Receive characteristic notifications
+
+```javascript
+// Get Heart Rate Service...
+device.gatt.getPrimaryService('heart_rate')
+// Get Heart Rate Measurement Characteristic...
+.then(service => service.getCharacteristic('heart_rate_measurement'))
+// Start Notifications...
+.then(characteristic => characteristic.startNotifications())
+.then(characteristic => {
+  characteristic.addEventListener('characteristicvaluechanged', onValueChanged);
+});
+
+function onValueChanged(event) {
+  // Do something with event.target.value
+}
+```
+
+<div id="highlight-notif-charact" class="highlight-code"></div>
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+<div class="fragment" data-fragment-index="2" hidden></div>
+
+##==##
+
+<!-- .slide: id="heartRateDemo" class="transition-black" data-state="heart-rate-demo stop-code-notif-charact" -->
 
 <iframe src="demos/heart-rate-sensor/">
 

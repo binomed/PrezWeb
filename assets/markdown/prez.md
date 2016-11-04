@@ -245,7 +245,7 @@ synth.speak(utterThis);
                                                   
 -->
 
-<!-- .slide: class="transition-white" data-state="stop-code-connect-ble" -->
+<!-- .slide: class="transition-white" data-state="ble stop-code-recognition" -->
 
 # Web Bluetooth
 
@@ -254,16 +254,22 @@ Qqes slides d'explication et de code
 
 ##==##
 
-<!-- .slide: class="with-code" data-state="code-connect-ble stop-code-read-charact" -->
+<!-- .slide: id="connectBle" class="with-code" data-state="code-connect-ble stop-ble" -->
 
-## Connect by name
+## Scan for Bluetooth devices
 
 ```javascript
-navigator.bluetooth.requestDevice({ filters: [{ services: ['battery_service'] }] })
-.then(device => {
-  return device.gatt.connect();
-})
-.catch(error => { console.log(error); });
+function onClick() {
+  const filters = { filters: [{ services: ['battery_service'] }] };
+
+  // Show a chooser scanning for devices advertising a Battery Service.
+  navigator.bluetooth.requestDevice(filters)
+  // Connect to device...
+  .then(device => device.gatt.connect())
+  .then(server => {
+    console.log('Bluetooth device is connected.');
+  });
+}
 ```
 
 <div id="highlight-connect-ble" class="highlight-code"></div>  
@@ -271,42 +277,35 @@ navigator.bluetooth.requestDevice({ filters: [{ services: ['battery_service'] }]
 <div class="fragment" data-fragment-index="1" hidden></div>
 <div class="fragment" data-fragment-index="2" hidden></div>
 
-
 ##==##
 
-<!-- .slide: class="with-code" data-state="stop-code-connect-ble code-read-charact" -->
+<!-- .slide: id="readCharact" class="with-code" data-state="code-read-charact stop-code-connect-ble" -->
 
-## Read Charactaristic
+## Read characteristic value
 
 ```javascript
+// Get Battery Service...
 device.gatt.getPrimaryService('battery_service')
-.then(service => {
-  // Getting Battery Level Characteristic...
-  return service.getCharacteristic('battery_level');})
-.then(characteristic => {
-  // Reading Battery Level...
-  return characteristic.readValue();})
+// Get Battery Level Characteristic...
+.then(service => service.getCharacteristic('battery_level'))
+// Read Battery Level...
+.then(characteristic => characteristic.readValue())
 .then(value => {
-  // In Chrome 50+, a DataView is returned instead of an ArrayBuffer.
-  value = value.buffer ? value : new DataView(value);
-  console.log('Battery percentage is ' + value.getUint8(0));})
-.catch(error => { console.log(error); });
+  const batteryLevel = value.getUint8(0);
+  console.log(`Battery percentage is ${batteryLevel}%.`);
+});
 ```
 
 <div id="highlight-read-charact" class="highlight-code"></div>  
 
-<div class="fragment" hidden></div>
-<div class="fragment" hidden></div>
-<div class="fragment" hidden></div>
-<div class="fragment" hidden></div>
-<div class="fragment" hidden></div>
-<div class="fragment" hidden></div>
+<div class="fragment" data-fragment-index="1" hidden></div>
+<div class="fragment" data-fragment-index="2" hidden></div>
 
 ##==##
 
-<!-- .slide: class="transition-black" data-state="stop-code-read-charact" -->
+<!-- .slide: id="heartRateDemo" class="transition-black" data-state="heart-rate-demo stop-code-read-charact" -->
 
-# Heart Rate
+<iframe src="demos/heart-rate-sensor/">
 
 Notes:
 Peut être qu'une image serait mieux ?

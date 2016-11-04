@@ -16,7 +16,7 @@ $top-code : 90px;
 }
 
 .highlight-code{
-	background-color: rgba(255,235,59,0.3);
+	background-color: rgba(255,255,255,0.3);
 	height:1.4em;
 	position:absolute;
 	transition-property: all;
@@ -36,7 +36,8 @@ $top-code : 90px;
 }
 
 #highlight-read-charact{
-	width:700px;
+	width:90%;
+	top:calc(90px + #{$line-height});
 }
 
 

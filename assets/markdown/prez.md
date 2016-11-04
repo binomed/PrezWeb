@@ -613,9 +613,6 @@ Démo avec le Olie
 Notes:
 Trouver une image !
 
-##==##
-
-## WebUSB
 
 ##==##
 
@@ -694,6 +691,10 @@ navigator.nfc.watch((message) => {
 
 Notes:
 Utilisation d'un tag nfc pour ouvrir l'application et write sur un tag
+
+##==##
+
+## WebUSB
 
 
 ##==##

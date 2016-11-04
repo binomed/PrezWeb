@@ -610,6 +610,8 @@ Démo avec le Olie
 
 # Welcome to the Futur
 
+Notes:
+Trouver une image !
 
 ##==##
 
@@ -617,13 +619,91 @@ Démo avec le Olie
 
 ##==##
 
-## WebNFC
+<!-- .slide: class="transition-white" -->
+
+# WebNFC
+
+![icon](./assets/images/nfc_demo.png)
+
+
+##==##
+
+<!-- .slide: class="transition-white" -->
+
+# Android Only
+
+##==##
+
+<!-- .slide: class="transition-white" -->
+
+PUSH <br> WATCH  <br> PEER2PEER
+
+
+##==##
+
+<!-- .slide: class="transition-white" -->
+
+WRITE JSON <br><br> WRITE NDEF
+
+##==##
+
+<!-- .slide: class="with-code" -->
+
+## Push message
+
+```javascript
+navigator.nfc.push({
+    data: [{ recordType: "url", data: "https://jef.binomed.fr" }]
+  }).then(() => {
+    console.log("Message pushed.");
+  }).catch((error) => {
+    console.log("Push failed :-( try again.");
+  });
+```
+
+
+##==##
+
+<!-- .slide: class="with-code" -->
+
+## Read message
+
+```javascript
+navigator.nfc.watch((message) => {
+		if (message.data[0].recordType == 'empty') {
+			navigator.nfc.push({
+			  url: "/custom/path",
+			  data: [{ recordType: "text", data: 'Hello World' }]
+			});
+		} else {
+			console.log('Read message written by ' + message.url);
+			processMessage(message);
+		}
+	}).then(() => {
+		console.log("Added a watch.");
+	}).catch((error) => {
+		console.log("Adding watch failed: " + error.name);
+	});
+```
+
+##==##
+
+<!-- .slide: class="transition-black" -->
+
+# let's write some tags !
+
+Notes:
+Utilisation d'un tag nfc pour ouvrir l'application et write sur un tag
+
 
 ##==##
 
 <!-- .slide: class="transition-black" -->
 
 # The Final !
+
+Notes:
+Image de feux d'artifice
 
 
 ##==##

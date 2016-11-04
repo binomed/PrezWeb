@@ -5,9 +5,34 @@ import {MBot} from '../webbluetooth/mbotControler.js';
 export class BlePrezControler{
 	constructor(){
 	
+		this._currentBleDevice = null;
+		this._basicBleBinding();
 		this._myoBinding();
 		// Just comment mbot part because it can always be usefull !
 		//this._mbotBinding();
+	}
+
+	_basicBleBinding() {
+		document.getElementById('connectBle').addEventListener('click', event => {
+			
+			const filters = { filters: [{ services: ['battery_service'] }] };
+			navigator.bluetooth.requestDevice(filters)
+			.then(device => device.gatt.connect())
+			.then(server => { 
+				console.log('Bluetooth device is connected.');
+				this._currentBleDevice = server.device;
+			});
+		});
+		document.getElementById('readCharact').addEventListener('click', event => {
+			
+			this._currentBleDevice.gatt.getPrimaryService('battery_service')
+			.then(service => service.getCharacteristic('battery_level'))
+			.then(characteristic => characteristic.readValue())
+			.then(value => {
+				const batteryLevel = value.getUint8(0);
+				console.log(`Battery percentage is ${batteryLevel}%.`);
+			});
+		});
 	}
 
 	_myoBinding(){

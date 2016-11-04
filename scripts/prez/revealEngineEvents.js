@@ -13,7 +13,8 @@ export class RevealEngineEvents{
 		// Management of actions in prez mode (not in preview mode)
 		if (!inIFrame){
 			// Init all ble actions
-			new BlePrezControler();
+			this._blePrezControler = new BlePrezControler();
+			this._bleEvents();
 
 			// Init Voice and Speech controlers
 			this.voiceRecognition = new VoiceRecognitionControler();
@@ -24,6 +25,15 @@ export class RevealEngineEvents{
 		// In al case we init the highlight of code.
 		this._initHighlightCode();
 
+	}
+
+	_bleEvents(){
+		Reveal.addEventListener('stop-code-read-charact', event => {
+			console.log(event);
+			if (this._blePrezControler._currentBleDevice) {
+				this._blePrezControler._currentBleDevice.gatt.disconnect();
+			}
+		})
 	}
 
 	_voiceEvents(){

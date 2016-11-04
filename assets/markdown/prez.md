@@ -469,6 +469,42 @@ Myo
 
 ##==##
 
+<!-- .slide: class="transition-white" -->
+
+# Tiens un slide à droite
+
+
+##--##
+
+<!-- .slide: class="transition-white" -->
+
+# Ah ! Je peux aussi aller en bas ?
+
+##--## 
+
+<!-- .slide: class="transition-white" -->
+
+# Aller encore un petit pour la route !
+
+##==##
+
+<!-- .slide: class="transition-white" -->
+
+# C'est bon t'as fini de jouer ?
+
+##==##
+
+<!-- .slide: class="transition-black" data-state="disconnect-myo"-->
+
+# Mbot time
+
+![icon](assets/images/mbot.png)
+
+Notes:
+Bon j'ai créé une application pour le controller, tu peux me donner l'url stp ?
+
+##==##
+
 <!-- .slide: class="transition-white" data-state="end-myo" -->
 
 # Physical Web

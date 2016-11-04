@@ -37,9 +37,9 @@ export class BlePrezControler{
 
 	_myoBinding(){
 		let lastDoubleTap = 0;
+		let myo = new MyoController();
 		document.getElementById('connectMyo').addEventListener('click', ()=>{
 			
-			let myo = new MyoControler();
 			if (!myo.connected){
 				myo.request()
 				.then(_=>myo.connect())
@@ -53,6 +53,10 @@ export class BlePrezControler{
 					} 
 				}));
 			}
+		});
+
+		Reveal.addEventListener('disconnect-myo', _=>{
+			myo.disconnect();
 		});
 	}
 

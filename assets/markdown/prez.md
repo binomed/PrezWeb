@@ -566,6 +566,12 @@ Slides explicatives ...
 Notes:
 Trouver une image !
 
+##==##
+
+<!-- .slide: class="transition-white" -->
+
+# Bon pas tant que ça finallement
+
 
 ##==##
 
@@ -662,7 +668,7 @@ Utilisation d'un tag nfc pour ouvrir l'application et write sur un tag
 
 <!-- .slide: class="transition-black" -->
 
-# The Final !
+# Pour conclure !
 
 Notes:
 Image de feux d'artifice

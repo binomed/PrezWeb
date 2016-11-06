@@ -559,19 +559,31 @@ Slides explicatives ...
 
 ##==##
 
-<!-- .slide: class="transition-white" -->
+<!-- .slide: data-background="assets/images/welcome_to_the_futur.jpg" data-state="hidefooter" class="transition" -->
 
 # Welcome to the Futur
 
 Notes:
-Trouver une image !
 
 ##==##
 
-<!-- .slide: class="transition-white" -->
+<!-- .slide: data-background="assets/images/not_really.jpg" data-state="hidefooter" class="transition" -->
 
 # Bon pas tant que ça finallement
 
+##==##
+
+<!-- .slide: data-background="assets/images/welcome_to_the_futur_2.jpg" data-state="hidefooter" class="transition" -->
+
+# Welcome to the Futur
+
+##==##
+
+<!-- .slide: data-background="assets/images/not_really_2.jpg" data-state="hidefooter" class="transition" data-copyrights="true" -->
+
+# Bon pas tant que ça finallement
+
+<div class="copyrights white">techcrunch</div>
 
 ##==##
 

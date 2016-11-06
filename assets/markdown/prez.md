@@ -666,12 +666,8 @@ Utilisation d'un tag nfc pour ouvrir l'application et write sur un tag
 
 ##==##
 
-<!-- .slide: class="transition-black" -->
+<!-- .slide: data-background="assets/images/html5_sticker.png" class="no filter" data-copyrights="true" -->
 
-# Pour conclure !
-
-Notes:
-Image de feux d'artifice
 
 
 ##==##

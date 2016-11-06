@@ -8,7 +8,7 @@ export class WebNfcControler{
 
      pushToTag(){
         navigator.nfc.push({
-            data: [{ recordType: "url", data: "https://jef.binomed.fr" }]
+            data: [{ recordType: "url", data: "https://devfest.gdgnantes.com" }]
         }).then(() => {
             console.log("Message pushed.");
         }).catch((error) => {

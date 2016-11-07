@@ -74,9 +74,9 @@ Senior Developer Programs Engineer
 <!-- .slide: class="transition-white all-techno" -->
 
 <h1>
-ambiant light <span>acceleration</span> battery <span>proximity</span> webworker <span>streamapi</span> 
-serviceworker <span> notifications</span> background sync <span>indexedDB</span> webrtc </span>visibility</span> 
-push notifications <span>home screen installation</span> reccording media <span>vibration</span> 
+ambiant light <span>acceleration</span> battery <span>proximity</span> webworker <span>streams</span> 
+service worker <span>notifications</span> background sync <span>indexedDB</span> webrtc </span>visibility</span> 
+push notifications <span>home screen installation</span> recording media <span>vibration</span> 
 fullscreen <span>file access</span> geolocalisation <span>network speed</span> offline <span>clipboard</span>
 online state <span>offline storage</span> PWA <span>web midi</span></h1>
 
@@ -103,7 +103,6 @@ Aujourd'hui, on ne parlera pas de ça !
 * Sélection de la source / Récupération de l'audio
 * Devient intéressant s'il est mixé avec des effets ou des canvas.
 * **HTTPS** only ! 
-* 2 versions l'api
 
 ##==##
 
@@ -128,32 +127,6 @@ Notes:
 * Sélection de la source / Récupération de l'audio
 * Devient intéressant s'il est mixé avec des effets ou des canvas.
 * **HTTPS** only ! 
-* 2 versions l'api
-
-##==##
-
-<!-- .slide: data-type-show="full" data-state="stop-code-user-media-v1"  -->
-
-## User Media
-
-### Différence entre les 2 versions ?
-
-* V1 : approche événementielle
-* V2 : approche avec des promises et simplifie le fonctionnement de récupération des objets associés (plus récent => moins de compatibilités)
-
-Notes:
-
-##==##
-
-<!-- .slide:  class="transition-white"  data-type-show="prez" data-state="stop-code-user-media-v1" -->
-
-# 2 Versions !
-
-
-Notes:
-* V1 : approche événementielle
-* V2 : approche avec des promises et simplifie le fonctionnement de récupération des objets associés (plus récent => moins de compatibilités)
-
 
 ##==##
 
@@ -161,15 +134,17 @@ Notes:
 
 ## User Media - V2
 
+```html
+<video autoplay></video>
+```
 ```javascript
 // We define the video constraints
 var constraints = {video: true};
 
 navigator.mediaDevices.getUserMedia(constraints)
-.then((stream)=>{
-    video.srcObject = stream;
-    video.onloadedmetadata = (e)=>video.play();
-})
+.then(stream => {
+  video.srcObject = stream;
+});
 ```
 
 <div id="highlight-user-media-v2" class="highlight-code"></div>  
@@ -569,7 +544,7 @@ Notes:
 
 <!-- .slide: data-background="assets/images/not_really.jpg" data-state="hidefooter" class="transition" -->
 
-# Bon pas tant que ça finallement
+# Bon pas tant que ça finalement
 
 ##==##
 
@@ -581,7 +556,7 @@ Notes:
 
 <!-- .slide: data-background="assets/images/not_really_2.jpg" data-state="hidefooter" class="transition" data-copyrights="true" -->
 
-# Bon pas tant que ça finallement
+# Bon pas tant que ça finalement
 
 <div class="copyrights white">techcrunch</div>
 
@@ -621,9 +596,9 @@ Notes:
 
 ```javascript
 navigator.nfc.push({
-    data: [{ recordType: "url", data: "https://devfest.gdgnantes.com" }]
-  }).then(() => {
-    console.log("Message pushed.");
+    data: [{ recordType: 'url', data: 'https://devfest.gdgnantes.com' }]
+  }).then(_ => {
+    console.log('Message pushed.');
   });
 ```
 
@@ -644,13 +619,13 @@ L'exemple ici présente un message ndef !
 ## Read message
 
 ```javascript
-navigator.nfc.watch((message) => {
-		for (let record of message.data) {
-      console.log("Record type:  " + record.recordType);
-      console.log("MIME type:    " + record.mediaType);
-      console.log("=== data ===\n" + record.data);
-    }
-	});
+navigator.nfc.watch(message => {
+  for (let record of message.data) {
+    console.log('Record type:  ' + record.recordType);
+    console.log('MIME type:    ' + record.mediaType);
+    console.log('=== data ===\n' + record.data);
+  }
+});
 ```
 
 <div id="highlight-read-nfc" class="highlight-code"></div>

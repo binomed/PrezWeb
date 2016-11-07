@@ -534,35 +534,11 @@ Slides explicatives ...
 
 ##==##
 
-<!-- .slide: data-background="assets/images/welcome_to_the_futur.jpg" data-state="hidefooter" class="transition" -->
-
-# Welcome to the Futur
-
-Notes:
+<!-- .slide: data-background-image="assets/images/opening-door.jpg" data-background-position="50% 50%" data-background-color="#000" data-background-size="contain" data-background-repeat="no-repeat" class="transition-black" -->
 
 ##==##
 
-<!-- .slide: data-background="assets/images/not_really.jpg" data-state="hidefooter" class="transition" -->
-
-# Bon pas tant que ça finalement
-
-##==##
-
-<!-- .slide: data-background="assets/images/welcome_to_the_futur_2.jpg" data-state="hidefooter" class="transition" -->
-
-# Welcome to the Futur
-
-##==##
-
-<!-- .slide: data-background="assets/images/not_really_2.jpg" data-state="hidefooter" class="transition" data-copyrights="true" -->
-
-# Bon pas tant que ça finalement
-
-<div class="copyrights white">techcrunch</div>
-
-##==##
-
-<!-- .slide: class="transition-white" -->
+<!-- .slide: class="transition-black" -->
 
 # WebNFC
 

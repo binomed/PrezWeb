@@ -13,7 +13,7 @@ export class HighlightEvents{
 			keyElt : 'connect-ble',
 			// We start with the first fragment (the initial position is fixed by css)
 			positionArray : [{
-				row : 4,
+				row : 1,
 				width : '90%'
 			}, {
 				row : 6,

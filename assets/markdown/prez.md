@@ -308,16 +308,22 @@ Qqes slides d'explication et de code
 
 ##==##
 
-<!-- .slide: id="connectBle" class="with-code" data-state="code-connect-ble stop-ble" -->
+<!-- .slide: class="transition-white" data-state="stop-ble" data-background-color="#fff"-->
+
+<img src="assets/images/bluetooth-structure.png" style="max-width: 80%;">
+
+##==##
+
+<!-- .slide: id="connectBle" class="with-code" data-state="code-connect-ble" -->
 
 ## Scan for Bluetooth devices
 
 ```javascript
 function onClick() {
-  const filters = { filters: [{ services: ['battery_service'] }] };
+  const options = { filters: [{ services: ['battery_service'] }] };
 
   // Show a chooser scanning for devices advertising a Battery Service.
-  navigator.bluetooth.requestDevice(filters)
+  navigator.bluetooth.requestDevice(options)
   // Connect to device...
   .then(device => device.gatt.connect())
   .then(server => {
@@ -482,10 +488,6 @@ Bon j'ai créé une application pour le controller, tu peux me donner l'url stp 
 
 # Physical Web
 
-Notes:
-Slides explicatives ...
-
-
 ##==##
 
 <!-- .slide: class="transition-black" data-state="start-mbot" -->
@@ -518,6 +520,10 @@ Slides explicatives ...
           <div class="flex20"></div>
       </div>
   </div>
+
+##==##
+
+<!-- .slide: class="transition-white" data-background-color="#fff" data-background-video="assets/videos/b0GDk-53fTo.mp4" data-background-video-loop="true" -->
 
 <!--
            ______ _______ ______ _____  

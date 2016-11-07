@@ -68,21 +68,18 @@ export class HighlightEvents{
 			keyElt : 'user-media-v2',
 			positionArray: [
 			{
-				row : 3,
+				row : 5,
 				width : '700px',
-				height : '1.4em'
 			},
 			{
-				row : 4,
+				row : 6,
 				left : '150px',
 				width : '100px',
-				height : '1.4em'
 			},
 			{
-				row : 5,
+				row : 7,
 				left : '100px',
 				width : '700px',
-				height : '2.4em'
 			}
 			]});
 
@@ -186,7 +183,7 @@ export class HighlightEvents{
 			},
 			{
 				row : 1,
-				col : 3,
+				left: '90px',
 				width : '550px'
 			},
 			{

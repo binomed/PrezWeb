@@ -45,7 +45,7 @@ $top-code : 90px;
 
 #highlight-user-media-v2{
 	width:500px;
-	top:calc(90px + #{$line-height});
+	top:calc(90px + #{3*$line-height});
 	left:$left-first;	
 }
 

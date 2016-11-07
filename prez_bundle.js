@@ -346,10 +346,8 @@ var RevealEngineEvents = exports.RevealEngineEvents = function () {
 		value: function _voiceEvents() {
 			var _this2 = this;
 
-			Reveal.addEventListener('recognition', function () {
-				setTimeout(function (_) {
-					return _this2._voiceCallBack();
-				}, 1000);
+			document.getElementById('google-assistant').addEventListener('click', function (_) {
+				_this2._voiceCallBack();
 			});
 			Reveal.addEventListener('end-recognition', function (_) {
 				try {
@@ -365,9 +363,53 @@ var RevealEngineEvents = exports.RevealEngineEvents = function () {
 			document.getElementById('demoSpeech').style.display = '';
 			this.voiceRecognition.start(function (finalStr) {
 				document.getElementById('speech_input').innerHTML = finalStr;
-				if (finalStr.indexOf('hello') != -1) {
+				if (finalStr.toLowerCase().includes('ça va')) {
 					document.getElementById('demoSpeech').style.display = 'none';
-					_this3.speechSynthesis.speak('bla bla bla').then(function (_) {
+					_this3.speechSynthesis.speak({
+						value: 'je vais très bien merci. Comment se passe ta conférence ? François est-il gentil avec toi ?'
+					}).then(function (_) {
+						return _this3._voiceCallBack.bind(_this3);
+					}).catch(function (error) {
+						console.error(error);
+					});
+				} else if (finalStr.toLowerCase().includes('anglais')) {
+					_this3.speechSynthesis.speak({
+						value: 'hello every one, welcome to the best talk of this event !',
+						langFr: false }).then(function (_) {
+						return _this3._voiceCallBack.bind(_this3);
+					}).catch(function (error) {
+						console.error(error);
+					});
+				} else if (finalStr.toLowerCase().includes('voix')) {
+					_this3.speechSynthesis.speak({
+						value: 'comme ça c\'est assez bizarre pour toi ?',
+						pitch: 1.5,
+						rate: 2 }).then(function (_) {
+						return _this3._voiceCallBack.bind(_this3);
+					}).catch(function (error) {
+						console.error(error);
+					});
+				} else if (finalStr.toLowerCase().includes('sommes-nous')) {
+					_this3.speechSynthesis.speak({
+						value: 'Voyons François, nous sommes dans ta session, je trouve que tu n\'as pas l\'air très réveillé'
+					}).then(function (_) {
+						return _this3._voiceCallBack.bind(_this3);
+					}).catch(function (error) {
+						console.error(error);
+					});
+				} else if (finalStr.toLowerCase().includes('suivant')) {
+					_this3.speechSynthesis.speak({
+						value: 'Très bien passons au slide suivant'
+					}).then(function (_) {
+						return Reveal.next();
+					}).catch(function (error) {
+						console.error(error);
+					});
+				} else {
+					var unknowArray = ['Articule s\'il te plait', 'Kamoulox !', 'Tu pourrais faire un effort quand même', 'Retire ton chewing gum avant de parler'];
+					_this3.speechSynthesis.speak({
+						value: unknowArray[Math.floor(Math.random() * unknowArray.length)]
+					}).then(function (_) {
 						return _this3._voiceCallBack.bind(_this3);
 					}).catch(function (error) {
 						console.error(error);
@@ -545,6 +587,7 @@ var SpeechSynthesisControler = exports.SpeechSynthesisControler = function () {
         this.synth = window.speechSynthesis;
 
         this.voiceFR = null;
+        this.voiceEN = null;
         this._configure();
     }
 
@@ -561,16 +604,26 @@ var SpeechSynthesisControler = exports.SpeechSynthesisControler = function () {
         value: function _populateVoiceList() {
             var voices = this.synth.getVoices();
             for (var i = 0; i < voices.length; i++) {
+                console.log("%s, %O ", voices[i].lang, voices[i]);
                 if (voices[i].lang === 'fr-FR') {
                     this.voiceFR = voices[i];
-                    console.log("%s, %O ", voices[i].lang, voices[i]);
+                } else if (voices[i].lang === 'en-GB') {
+                    this.voiceEN = voices[i];
                 }
             }
         }
     }, {
         key: 'speak',
-        value: function speak(value) {
+        value: function speak(_ref) {
             var _this = this;
+
+            var value = _ref.value;
+            var _ref$langFr = _ref.langFr;
+            var langFr = _ref$langFr === undefined ? true : _ref$langFr;
+            var _ref$pitch = _ref.pitch;
+            var pitch = _ref$pitch === undefined ? 1 : _ref$pitch;
+            var _ref$rate = _ref.rate;
+            var rate = _ref$rate === undefined ? 1 : _ref$rate;
 
             return new Promise(function (resolve, reject) {
 
@@ -578,9 +631,9 @@ var SpeechSynthesisControler = exports.SpeechSynthesisControler = function () {
                     reject();
                 }
                 var utterThis = new SpeechSynthesisUtterance(value);
-                utterThis.voice = _this.voiceFR;
-                utterThis.pitch = 1;
-                utterThis.rate = 1;
+                utterThis.voice = langFr ? _this.voiceFR : _this.voiceEN;
+                utterThis.pitch = pitch;
+                utterThis.rate = rate;
                 utterThis.onend = function () {
                     resolve();
                 };

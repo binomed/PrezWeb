@@ -252,8 +252,8 @@ var synth = window.speechSynthesis;
 
 var utterThis = new SpeechSynthesisUtterance(inputTxt.value);
 utterThis.voice = 'fr-FR';
-utterThis.pitch = pitch.value;
-utterThis.rate = rate.value;
+utterThis.pitch = 1;
+utterThis.rate = 1;
 synth.speak(utterThis);
 ```
 
@@ -269,7 +269,7 @@ synth.speak(utterThis);
 
 ##==##
 
-<!-- .slide: class="transition-black" data-state="recognition stop-code-web-speech-synthesis"-->
+<!-- .slide: id="google-assistant" class="transition-black" data-state="recognition stop-code-web-speech-synthesis"-->
 
 # My Google Assistant
 

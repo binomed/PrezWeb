@@ -46,20 +46,33 @@
 $item-load: 4;
 $load-colors: #3A8DF2, #E14E39, #FCC000, #3AA05C;
 
+.reveal .slides section#google-assistant{
+  h1{
+      margin-top:0px;
+  }
+}
+
 .reveal .slides section #demoSpeech{
   position: absolute;
-  width: 500px;
-  height: 400px;
+  width: 700px;
+  height: 300px;
   top: 50%;
   left: 50%;
-  margin-left: -270px;
-  margin-top: -100px;
-  background: rgba(0,0,0,.75);
-  color: white;
+  margin-left: -350px;
+  margin-top: 100px;
+  background: rgba(255,255,255,.75);
+  box-shadow: 7px 7px 8px 0px rgba(45, 36, 36, 0.75);
+  color: #263238;
   padding: 20px;
+  
+  #speech_input{
+      margin-top: 50px;
+      font-size: 0.9em;
+  }
+
 
   i{
-    color : grey;
+    color : #263238;
   }
     .loading {
         position: relative;

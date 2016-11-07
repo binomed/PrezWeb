@@ -161,11 +161,11 @@ Toujours besoin de adapter.js pour faire marcher correctement !
 
 ##==##
 
-<!-- .slide: data-state="stop-code-user-media-v2" -->
+<!-- .slide: data-state="stop-code-user-media-v2" data-background-video="assets/videos/hmqZxP6iTpo.mp4" data-background-video-loop="true" -->
 
-## Payement Api
+## Web Payments
 
-blablabla
+##==##
 
 <!--
    _____ _____  ______ ______ _____ _    _ 
@@ -176,8 +176,6 @@ blablabla
  |_____/|_|    |______|______\_____|_|  |_|
                                            
 -->
-
-##==##
 
 <!-- .slide: class="transition-white" -->
 

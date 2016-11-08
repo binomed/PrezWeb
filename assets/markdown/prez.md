@@ -301,10 +301,9 @@ synth.speak(utterThis);
 
 <!-- .slide: class="transition-white" data-state="ble stop-code-recognition end-recognition" -->
 
-# Web Bluetooth
+# <span style="opacity: .8; font-weight: normal;">Web</span> Bluetooth
 
-Notes:
-Qqes slides d'explication et de code
+![icon](./assets/images/bluetooth.svg)
 
 ##==##
 
@@ -628,20 +627,41 @@ Utilisation d'un tag nfc pour ouvrir l'application et write sur un tag
 
 ##==##
 
-## WebUSB
+<!-- .slide: class="transition-white" -->
 
+# <span style="opacity: .8; font-weight: normal;">Web</span>USB
+
+![icon](./assets/images/usb.png)
+
+##==##
+
+<!-- .slide: class="with-code" -->
+
+## WebUSB - Talk to an Arduino USB board
+
+```
+navigator.usb.requestDevice({ filters: [{ vendorId: 0x2341 }] })
+.then(device => {
+  return device.open() // Begin a session.
+  .then(_ => device.selectConfiguration(1)) // Select configuration #1.
+  .then(_ => device.claimInterface(2)) // Request control over interface #2.
+  .then(_ => device.controlTransferOut({
+      requestType: 'class',
+      recipient: 'interface',
+      request: 0x22,
+      value: 0x01,
+      index: 0x02 })) // Ready to receive data
+  .then(_ => device.transferIn(5, 64)) // Waiting for 64 bytes from endpoint #5.
+  .then(result => { console.log(`Received: ${result.data}`); }) });
+```
 
 ##==##
 
 <!-- .slide: data-background="assets/images/html5_sticker.png" class="no filter" data-copyrights="true" -->
 
-
-
 ##==##
 
 <!-- .slide: class="last-slide" -->
-
-
 
 <!-- .element: class="thank-message" --> Merci  
 

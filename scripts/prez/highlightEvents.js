@@ -139,24 +139,20 @@ export class HighlightEvents{
 			keyElt : 'web-speech-synthesis', 
 			positionArray: [
 			{
+				row : 1,
+				width : '400px'
+			},
+			{
 				row : 2,
-				width : '850px'
+				width : '400px'
 			},
 			{
 				row : 3,
-				width : '400px'
-			},
-			{
-				row : 4,
 				width : '450px'
 			},
 			{
-				row : 5,
-				width : '400px'
-			},
-			{
-				row : 6,
-				width : '350px'
+				row : 4,
+				width : '600px'
 			}
 			]});
 

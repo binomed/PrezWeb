@@ -19,10 +19,11 @@ export class SpeechSynthesisControler{
     _populateVoiceList() {
         let voices = this.synth.getVoices();
         for (var i = 0; i < voices.length; i++) {
-            console.log("%s, %O ", voices[i].lang, voices[i]);
             if (voices[i].lang === 'fr-FR') {
+                console.debug("%s, %O ", voices[i].lang, voices[i]);
                 this.voiceFR = voices[i];
             }else if (voices[i].lang === 'en-GB') {
+                console.debug("%s, %O ", voices[i].lang, voices[i]);
                 this.voiceEN = voices[i];
             }
         }

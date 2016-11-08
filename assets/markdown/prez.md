@@ -191,12 +191,12 @@ Toujours besoin de adapter.js pour faire marcher correctement !
 var recognition = new SpeechRecognition();
 recognition.lang = 'fr-FR';
 recognition.continuous = true;
-recognition.interimResults = true;
+recognition.interimResults = false;
 
 recognition.start();
 recognition.onresult = function(event) {
   var finalStr = event.results[0][0].transcript;
-  console.log('Confidence: ' + finalStr); 
+  console.log('Transcript: ' + finalStr); 
 }
 ```
 
@@ -222,7 +222,7 @@ var speechRecognitionList = new SpeechGrammarList();
 speechRecognitionList.addFromString(grammar, 1);
 recognition.grammars = speechRecognitionList;
 //recognition.continuous = false;
-recognition.lang = 'en-US';
+recognition.lang = 'fr-FR';
 recognition.interimResults = false;
 recognition.maxAlternatives = 1;
 ```
@@ -248,13 +248,11 @@ recognition.maxAlternatives = 1;
 ## Web Speech Synthesis
 
 ```javascript
-var synth = window.speechSynthesis;
-
-var utterThis = new SpeechSynthesisUtterance(inputTxt.value);
+var utterThis = new SpeechSynthesisUtterance("Bonjour DevFest");
 utterThis.voice = 'fr-FR';
 utterThis.pitch = 1;
 utterThis.rate = 1;
-synth.speak(utterThis);
+window.speechSynthesis.speak(utterThis);
 ```
 
 
@@ -264,7 +262,6 @@ synth.speak(utterThis);
 <div class="fragment" data-fragment-index="2" hidden></div>
 <div class="fragment" data-fragment-index="3" hidden></div>
 <div class="fragment" data-fragment-index="4" hidden></div>
-<div class="fragment" data-fragment-index="5" hidden></div>
 
 
 ##==##

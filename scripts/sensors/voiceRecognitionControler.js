@@ -11,7 +11,7 @@ export class VoiceRecognitionControler{
     start(callback){
         this.recognition.onresult = (event)=>{
             const finalStr = event.results[0][0].transcript;
-            console.log('Confidence: ' + finalStr);
+            console.debug('Confidence: ' + finalStr);
             if (callback){
                 callback(finalStr);
             }            
@@ -28,19 +28,19 @@ export class VoiceRecognitionControler{
 
         // We detect end
         this.recognition.onend = _=>{
-            console.log('End of recognition');
+            console.debug('End of recognition');
             this.recognition.stop();
         };
         // We detect errors
         this.recognition.onerror = (event) => {
             if (event.error == 'no-speech') {
-                console.log('No Speech');
+                console.debug('No Speech');
             }
             if (event.error == 'audio-capture') {
-                console.log('No microphone')
+                console.debug('No microphone')
             }
             if (event.error == 'not-allowed') {
-                console.log('Not Allowed');
+                console.debug('Not Allowed');
             }
         };     
     }

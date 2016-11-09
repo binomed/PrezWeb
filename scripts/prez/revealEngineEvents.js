@@ -71,8 +71,8 @@ export class RevealEngineEvents{
 			}else if (finalStr.toLowerCase().includes('voix')){
 				this.speechSynthesis.speak({
 					value: 'comme ça c\'est assez bizarre pour toi ?',
-					pitch : 0.3,
-					rate : 2}
+					pitch : 2,
+					rate : 0.3}
 				)
 				.then(_=>this._voiceCallBack.bind(this))
 				.catch((error)=>{

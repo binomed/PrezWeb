@@ -5,11 +5,6 @@
 
 ### 2016.11.09 DevFest @ **Nantes**
 
-##==##
-
-<!-- .slide: class="first-slide" data-type-show="full" -->
-
-# **Le Web de Demaintenant**
 
 ##==##
 
@@ -90,19 +85,6 @@ Aujourd'hui, on ne parlera pas de ça !
 # User Media
 
 ![icon](./assets/images/camera_icon.png)
-
-##==##
-
-<!-- .slide: data-type-show="full" -->
-
-## User Media
-
-* Encore dépendant des navigateurs !
-
-* Possibilité de préciser ce qu'on récupère et on peut séparer les flux ! 
-* Sélection de la source / Récupération de l'audio
-* Devient intéressant s'il est mixé avec des effets ou des canvas.
-* **HTTPS** only ! 
 
 ##==##
 

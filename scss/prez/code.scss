@@ -1,29 +1,27 @@
-
-$left-first : 60px;
-$left-tab : 100px;
-$line-height : 1.15em;
-$top-code : 90px;
+$left-first: 60px;
+$left-tab: 100px;
+$line-height: 1.15em;
+$top-code: 90px;
 
 /*
 	GENERIC CONFIGURATION
 */
-@mixin line($row){
-	top: calc(#{$top-code} + (#{$row} * #{$line-height}));        
+
+@mixin line($row) {
+	top: calc(#{$top-code} + (#{$row} * #{$line-height}));
 }
 
-@mixin height($row){
+@mixin height($row) {
 	height: #{$row}.4em;
 }
 
-.highlight-code{
-	background-color: rgba(255,255,255,0.3);
-	height:1.4em;
-	position:absolute;
+.highlight-code {
+	background-color: rgba(255, 235, 59, 0.3);
+	height: 1.4em;
+	position: absolute;
 	transition-property: all;
-    transition-duration: 0.5s;
-    transition-timing-fonction: linear;
-    left:$left-first;	
-    @include line(0);
+	transition-duration: 0.5s;
+	transition-timing-fonction: linear;
 }
 
 
@@ -31,53 +29,50 @@ $top-code : 90px;
 	HIGHLIGHT OF CODE !
 */
 
-#highlight-connect-ble{
-	width:90%;
+#highlight-connect-ble {
+	width: 90%;
 	top:calc(90px + #{4*$line-height});
 }
 
 #highlight-read-charact,
 #highlight-write-charact,
-#highlight-notif-charact{
-	width:90%;
+#highlight-notif-charact {
+	width: 90%;
 	top:calc(90px + #{$line-height});
 }
 
-
-#highlight-user-media-v2{
-	width:500px;
+#highlight-user-media-v2 {
+	width: 500px;
 	top:calc(90px + #{3*$line-height});
-	left:$left-first;	
+	left: $left-first;
 }
 
-
-#highlight-web-speech{
+#highlight-web-speech {
 	width: 600px;
-    top: 90px;
-    left: 60px;
+	top: 90px;
+	left: 60px;
 }
 
-#highlight-web-speech-grammar{
+#highlight-web-speech-grammar {
 	width: 1200px;
-    top: 90px;
-    left: 60px;
+	top: 90px;
+	left: 60px;
 }
 
-#highlight-web-speech-synthesis{
+#highlight-web-speech-synthesis {
 	width: 900px;
-    top: 90px;
-    left: 60px;
+	top: 90px;
+	left: 60px;
 }
 
-
-#highlight-write-nfc{
+#highlight-write-nfc {
 	width: 300px;
-    top: 90px;
-    left: 60px;
+	top: 90px;
+	left: 60px;
 }
 
-#highlight-read-nfc{
+#highlight-read-nfc {
 	width: 300px;
-    top: 90px;
-    left: 60px;
+	top: 90px;
+	left: 60px;
 }

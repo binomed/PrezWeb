@@ -4,7 +4,7 @@ const MIN_TOP = '95px';
 const LINE_HEIGHT = '0.57em';
 const ADDITIONNAL_HEIGHT = '0.4em';
 const COL_WIDTH = 35;
-const LEFT_FIRST = '60px';
+
 const LEFT_TAB = '100px';
 
 export class HighlightCodeHelper {
@@ -16,19 +16,16 @@ export class HighlightCodeHelper {
 		this.positionArray = positionArray;
 		this.progress = Reveal.getProgress();
 
-		Reveal.addEventListener(`code-${keyElt}`, this._listenFragments.bind(this));
-		Reveal.addEventListener(`stop-code-${keyElt}`, this._unregisterFragments.bind(this));
-
-		Reveal.addEventListener(`code-${keyElt}`, function (event) {
+		Reveal.addEventListener(`code-${keyElt}`,  () => {
 			try {
-				let currentProgress = Reveal.getProgress();
+				const currentProgress = Reveal.getProgress();
 				this._applyProperties(currentProgress > this.progress ? this.positionArray[0] : this.positionArray[this.positionArray.length - 1]);
 				this._listenFragments();
 			} catch (e) {
 				console.error(e);
 			}
 		});
-		Reveal.addEventListener(`stop-code-${keyElt}`, function (event) {
+		Reveal.addEventListener(`stop-code-${keyElt}`, () => {
 			try {
 				this.progress = Reveal.getProgress();
 				this._unregisterFragments();

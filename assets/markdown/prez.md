@@ -3,7 +3,7 @@
 
 # **Le Web de Demaintenant**
 
-### 2016.11.09 DevFest @ **Nantes**
+### 2017.08.06 Web2Day @ **Nantes**
 
 
 ##==##
@@ -51,12 +51,12 @@ Senior Developer Programs Engineer
 <!--
   _______ ____  _____      __     __
  |__   __/ __ \|  __ \   /\\ \   / /
-    | | | |  | | |  | | /  \\ \_/ / 
-    | | | |  | | |  | |/ /\ \\   /  
-    | | | |__| | |__| / ____ \| |   
-    |_|  \____/|_____/_/    \_\_|   
-                                    
-                   
+    | | | |  | | |  | | /  \\ \_/ /
+    | | | |  | | |  | |/ /\ \\   /
+    | | | |__| | |__| / ____ \| |
+    |_|  \____/|_____/_/    \_\_|
+
+
 -->
 
 
@@ -69,9 +69,9 @@ Senior Developer Programs Engineer
 <!-- .slide: class="transition-white all-techno" -->
 
 <h1>
-ambiant light <span>acceleration</span> battery <span>proximity</span> webworker <span>streams</span> 
-service worker <span>notifications</span> background sync <span>indexedDB</span> webrtc </span>visibility</span> 
-push notifications <span>home screen installation</span> recording media <span>vibration</span> 
+ambiant light <span>acceleration</span> battery <span>proximity</span> webworker <span>streams</span>
+service worker <span>notifications</span> background sync <span>indexedDB</span> webrtc </span>visibility</span>
+push notifications <span>home screen installation</span> recording media <span>vibration</span>
 fullscreen <span>file access</span> geolocalisation <span>network speed</span> offline <span>clipboard</span>
 online state <span>offline storage</span> PWA <span>web midi</span></h1>
 
@@ -105,10 +105,10 @@ var vgaConstraints = {
 
 Notes:
 * Encore dépendant des navigateurs !
-* Possibilité de préciser ce qu'on récupère et on peut séparer les flux ! 
+* Possibilité de préciser ce qu'on récupère et on peut séparer les flux !
 * Sélection de la source / Récupération de l'audio
 * Devient intéressant s'il est mixé avec des effets ou des canvas.
-* **HTTPS** only ! 
+* **HTTPS** only !
 
 ##==##
 
@@ -129,15 +129,17 @@ navigator.mediaDevices.getUserMedia(constraints)
 });
 ```
 
-<div id="highlight-user-media-v2" class="highlight-code"></div>  
+<code-highlighter
+    id="highlight-user-media-v2"
+    line-height="0.57em"></code-highlighter>
 
 <div class="fragment" data-fragment-index="1" hidden></div>
 <div class="fragment" data-fragment-index="2" hidden></div>
 <div class="fragment" data-fragment-index="3" hidden></div>
-  
+
 
 Notes:
-Toujours besoin de adapter.js pour faire marcher correctement ! 
+Toujours besoin de adapter.js pour faire marcher correctement !
 
 
 
@@ -150,24 +152,24 @@ Toujours besoin de adapter.js pour faire marcher correctement !
 ##==##
 
 <!--
-   _____ _____  ______ ______ _____ _    _ 
+   _____ _____  ______ ______ _____ _    _
   / ____|  __ \|  ____|  ____/ ____| |  | |
  | (___ | |__) | |__  | |__ | |    | |__| |
   \___ \|  ___/|  __| |  __|| |    |  __  |
   ____) | |    | |____| |___| |____| |  | |
  |_____/|_|    |______|______\_____|_|  |_|
-                                           
+
 -->
 
 <!-- .slide: class="transition-white" -->
 
 # Voice Recognition
 
-##==## 
+##==##
 
 <!-- .slide: class="with-code" data-state="code-web-speech stop-code-web-speech-gramar"  -->
 
-## Web Speech - Utilisation 
+## Web Speech - Utilisation
 
 ```javascript
 var recognition = new SpeechRecognition();
@@ -178,11 +180,11 @@ recognition.interimResults = false;
 recognition.start();
 recognition.onresult = function(event) {
   var finalStr = event.results[0][0].transcript;
-  console.log('Transcript: ' + finalStr); 
+  console.log('Transcript: ' + finalStr);
 }
 ```
 
-<div id="highlight-web-speech" class="highlight-code"></div>  
+<div id="highlight-web-speech" class="highlight-code"></div>
 
 <div class="fragment" data-fragment-index="1" hidden></div>
 <div class="fragment" data-fragment-index="2" hidden></div>
@@ -210,7 +212,7 @@ recognition.maxAlternatives = 1;
 ```
 
 
-<div id="highlight-web-speech-grammar" class="highlight-code"></div>  
+<div id="highlight-web-speech-grammar" class="highlight-code"></div>
 
 <div class="fragment" data-fragment-index="1" hidden></div>
 <div class="fragment" data-fragment-index="2" hidden></div>
@@ -238,7 +240,7 @@ window.speechSynthesis.speak(utterThis);
 ```
 
 
-<div id="highlight-web-speech-synthesis" class="highlight-code"></div>  
+<div id="highlight-web-speech-synthesis" class="highlight-code"></div>
 
 <div class="fragment" data-fragment-index="1" hidden></div>
 <div class="fragment" data-fragment-index="2" hidden></div>
@@ -259,7 +261,7 @@ window.speechSynthesis.speak(utterThis);
         <div class="item item-2"></div>
         <div class="item item-3"></div>
         <div class="item item-4"></div>
-    </div>  
+    </div>
     <i class="material-icons md-48">mic</i>
     <p id="speech_input"></p>
 </div>
@@ -268,14 +270,14 @@ window.speechSynthesis.speak(utterThis);
 ##==##
 
 <!--
-  ____  _     _    _ ______ _______ ____   ____ _______ _    _ 
+  ____  _     _    _ ______ _______ ____   ____ _______ _    _
  |  _ \| |   | |  | |  ____|__   __/ __ \ / __ \__   __| |  | |
  | |_) | |   | |  | | |__     | | | |  | | |  | | | |  | |__| |
  |  _ <| |   | |  | |  __|    | | | |  | | |  | | | |  |  __  |
  | |_) | |___| |__| | |____   | | | |__| | |__| | | |  | |  | |
  |____/|______\____/|______|  |_|  \____/ \____/  |_|  |_|  |_|
-                                                               
-                                                  
+
+
 -->
 
 <!-- .slide: class="transition-white" data-state="ble stop-code-recognition end-recognition" -->
@@ -310,7 +312,7 @@ function onClick() {
 }
 ```
 
-<div id="highlight-connect-ble" class="highlight-code"></div>  
+<div id="highlight-connect-ble" class="highlight-code"></div>
 
 <div class="fragment" data-fragment-index="1" hidden></div>
 <div class="fragment" data-fragment-index="2" hidden></div>
@@ -334,7 +336,7 @@ device.gatt.getPrimaryService('battery_service')
 });
 ```
 
-<div id="highlight-read-charact" class="highlight-code"></div>  
+<div id="highlight-read-charact" class="highlight-code"></div>
 
 <div class="fragment" data-fragment-index="1" hidden></div>
 <div class="fragment" data-fragment-index="2" hidden></div>
@@ -411,13 +413,13 @@ Notes:
 Myo
 
 <!--
-  _____   __          ________ ____  
- |  __ \  \ \        / /  ____|  _ \ 
+  _____   __          ________ ____
+ |  __ \  \ \        / /  ____|  _ \
  | |__) |  \ \  /\  / /| |__  | |_) |
- |  ___/    \ \/  \/ / |  __| |  _ < 
+ |  ___/    \ \/  \/ / |  __| |  _ <
  | |         \  /\  /  | |____| |_) |
- |_|          \/  \/   |______|____/ 
-                                                                             
+ |_|          \/  \/   |______|____/
+
 -->
 
 ##==##
@@ -437,7 +439,7 @@ Myo
 
 # Ah ! Je peux aussi aller en bas ?
 
-##--## 
+##--##
 
 <!-- .slide: class="transition-white" -->
 
@@ -471,14 +473,14 @@ Bon j'ai créé une application pour le controller, tu peux me donner l'url stp 
 <!-- .slide: class="transition-white" data-background-color="#fff" data-background-video="assets/videos/b0GDk-53fTo.mp4" data-background-video-loop="true" -->
 
 <!--
-           ______ _______ ______ _____  
-     /\   |  ____|__   __|  ____|  __ \ 
+           ______ _______ ______ _____
+     /\   |  ____|__   __|  ____|  __ \
     /  \  | |__     | |  | |__  | |__) |
-   / /\ \ |  __|    | |  |  __| |  _  / 
-  / ____ \| |       | |  | |____| | \ \ 
+   / /\ \ |  __|    | |  |  __| |  _  /
+  / ____ \| |       | |  | |____| | \ \
  /_/    \_\_|       |_|  |______|_|  \_\
-                                        
-      
+
+
 -->
 
 ##==##
@@ -609,11 +611,11 @@ navigator.usb.requestDevice({ filters: [{ vendorId: 0x2341 }] })
 
 <!-- .slide: class="last-slide" -->
 
-<!-- .element: class="thank-message" --> Merci  
+<!-- .element: class="thank-message" --> Merci
 
 <!-- .element: class="presenter" --> **Jean-François Garreau & François Beaufort **
 
 <!-- .element: class="work-rule" --> Ingénieur Lucca & Ingénieur Google
 
-<!-- .element: class="email" --> **@jefBinomed & +FrancoisBeaufort**  
+<!-- .element: class="email" --> **@jefBinomed & +FrancoisBeaufort**
 

@@ -1,35 +1,39 @@
-'use strict'
+"use strict";
 
-import {HighlightCodeHelper} from '../helpers/highlightCodeHelper.js';
+import { HighlightCodeHelper } from "../helpers/highlightCodeHelper.js";
 
 const LINE_HEIGHT = 1.15;
 const ADDITIONNAL_HEIGT = 0.4;
 const COL_WIDTH = 35;
+const LEFT_FIRST = "60px";
 
-export class HighlightEvents{
-	constructor(){
-		//  Bluetooth: Scan + Connect 
-		new HighlightCodeHelper({
+export class HighlightEvents {
+  constructor() {
+    //  Bluetooth: Scan + Connect
+    /*new HighlightCodeHelper({
 			keyElt : 'connect-ble',
 			// We start with the first fragment (the initial position is fixed by css)
 			positionArray : [{
-				row : 1,
+				width: '500px',
+				left: LEFT_FIRST
+			},{
+				line : 1,
 				width : '90%'
 			}, {
-				row : 6,
+				line : 6,
 				width : '90%'
 			}]
-		});
+		});*/
 
-		//  Ble Code Read Characteristic
-		new HighlightCodeHelper({
+    //  Ble Code Read Characteristic
+    /*new HighlightCodeHelper({
 			keyElt : 'read-charact',
 			// We start with the first fragment (the initial position is fixed by css)
 			positionArray : [{
-				row : 3,
+				line : 3,
 				width : '90%'
 			}, {
-				row : 5,
+				line : 5,
 				width : '90%'
 			}]
 		})
@@ -39,10 +43,10 @@ export class HighlightEvents{
 			keyElt : 'write-charact',
 			// We start with the first fragment (the initial position is fixed by css)
 			positionArray : [{
-				row : 3,
+				line : 3,
 				width : '90%'
 			}, {
-				row : 8,
+				line : 8,
 				width : '90%'
 			}]
 		})
@@ -52,65 +56,68 @@ export class HighlightEvents{
 			keyElt : 'notif-charact',
 			// We start with the first fragment (the initial position is fixed by css)
 			positionArray : [{
-				row : 3,
+				line : 3,
 				width : '90%'
 			}, {
-				row : 5,
+				line : 5,
 				width : '90%',
 				height: '186px'
 			}]
-		})
+		})*/
 
+    // Code User Media 1
+    new HighlightCodeHelper({
+      keyElt: "user-media-v2",
+      positionArray: [
+        {
+          width: "500px",
+          line: 4,
+          left: LEFT_FIRST
+        },
+        {
+          line: 6,
+          width: "700px"
+        },
+        {
+          line: 7,
+          left: "150px",
+          width: "100px"
+        },
+        {
+          line: 8,
+          left: "100px",
+          width: "700px"
+        }
+      ]
+    });
 
-
-	// Code User Media 1
-	new HighlightCodeHelper({
-			keyElt : 'user-media-v2',
-			positionArray: [
-			{
-				row : 5,
-				width : '700px',
-			},
-			{
-				row : 6,
-				left : '150px',
-				width : '100px',
-			},
-			{
-				row : 7,
-				left : '100px',
-				width : '700px',
-			}
-			]});
-
-
-	
+    /*
 	// Code Web Speech
 	new HighlightCodeHelper({
-			keyElt : 'web-speech', 
+			keyElt : 'web-speech',
 			positionArray:[
 			{
-				row : 1,
+				line : 1,
 				width : '400px'
 			},
 			{
-				row : 2,
+				line : 2,
 				width : '500px'
 			},
 			{
-				row : 3,
-				width : '550px'			
+				line : 3,
+				width : '550px'
 			},
 			{
-				row : 5,
-				width : '300px'			
-			},
-			{
-				row : 6,
+				line : 5,
 				width : '300px'
 			},
 			{
-				row : 7,				
+				line : 6,
+				width : '300px'
+			},
+			{
+				line : 7,
 				left : '280px',
 				width : '450px'
 			}
@@ -118,40 +125,40 @@ export class HighlightEvents{
 
 	// Code Web Speech Grammar
 	new HighlightCodeHelper({
-			keyElt : 'web-speech-grammar', 
+			keyElt : 'web-speech-grammar',
 			positionArray : [
 			{
-				row : 2,
+				line : 2,
 				width : '750px'
 			},
 			{
-				row : 3,
+				line : 3,
 				width : '700px'
 			},
 			{
-				row : 4,
+				line : 4,
 				width : '650px'
 			}
 			]});
 
 	// Code Web Speech Synthesis
 	new HighlightCodeHelper({
-			keyElt : 'web-speech-synthesis', 
+			keyElt : 'web-speech-synthesis',
 			positionArray: [
 			{
-				row : 1,
+				line : 1,
 				width : '400px'
 			},
 			{
-				row : 2,
+				line : 2,
 				width : '400px'
 			},
 			{
-				row : 3,
+				line : 3,
 				width : '450px'
 			},
 			{
-				row : 4,
+				line : 4,
 				width : '600px'
 			}
 			]});
@@ -159,36 +166,36 @@ export class HighlightEvents{
 
 	// Code write nfc
 	new HighlightCodeHelper({
-			keyElt : 'write-nfc', 
+			keyElt : 'write-nfc',
 			positionArray : [
 			{
-				row : 1,
+				line : 1,
 				col : 1,
 				width : '1050px'
 			}
 			]});
-	
+
 	// Code read nfc
 	new HighlightCodeHelper({
-			keyElt : 'read-nfc', 
+			keyElt : 'read-nfc',
 			positionArray : [
 			{
-				row : 0,
+				line : 0,
 				left: '330px',
 				width : '150px'
 			},
 			{
-				row : 1,
+				line : 1,
 				left: '90px',
 				width : '550px'
 			},
 			{
-				row : 2,
+				line : 2,
 				left: '550px',
 				calcHeight: 3,
 				width : '300px'
 			}
 			]});
-
-	}
+			*/
+  }
 }

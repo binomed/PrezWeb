@@ -15,13 +15,25 @@ $top-code: 90px;
 	height: #{$row}.4em;
 }
 
-.highlight-code {
-	background-color: rgba(255, 235, 59, 0.3);
-	height: 1.4em;
-	position: absolute;
-	transition-property: all;
-	transition-duration: 0.5s;
-	transition-timing-fonction: linear;
+/**
+* Gestion du highlighting de code
+*/
+
+.reveal .slides section.with-code h2 {
+  position: relative;
+  z-index: 100;
+}
+
+code-highlighter {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.reveal .backgrounds div.slide-background.with-code:not(.no-mask) {
+  background: linear-gradient(rgba(63, 63, 63, 0.7), rgba(63, 63, 63, 0.7)), linear-gradient(rgba(63, 63, 63, 1), rgba(63, 63, 63, 1));
 }
 
 
@@ -41,11 +53,11 @@ $top-code: 90px;
 	top:calc(90px + #{$line-height});
 }
 
-#highlight-user-media-v2 {
+/*#highlight-user-media-v2 {
 	width: 500px;
 	top:calc(90px + #{3*$line-height});
 	left: $left-first;
-}
+}*/
 
 #highlight-web-speech {
 	width: 600px;

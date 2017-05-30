@@ -184,7 +184,9 @@ recognition.onresult = function(event) {
 }
 ```
 
-<div id="highlight-web-speech" class="highlight-code"></div>
+<code-highlighter
+    id="highlight-web-speech"
+    line-height="0.57em"></code-highlighter>
 
 <div class="fragment" data-fragment-index="1" hidden></div>
 <div class="fragment" data-fragment-index="2" hidden></div>
@@ -212,7 +214,10 @@ recognition.maxAlternatives = 1;
 ```
 
 
-<div id="highlight-web-speech-grammar" class="highlight-code"></div>
+
+<code-highlighter
+    id="highlight-web-speech-grammar"
+    line-height="0.57em"></code-highlighter>
 
 <div class="fragment" data-fragment-index="1" hidden></div>
 <div class="fragment" data-fragment-index="2" hidden></div>
@@ -240,7 +245,9 @@ window.speechSynthesis.speak(utterThis);
 ```
 
 
-<div id="highlight-web-speech-synthesis" class="highlight-code"></div>
+<code-highlighter
+    id="highlight-web-speech-synthesis"
+    line-height="0.57em"></code-highlighter>
 
 <div class="fragment" data-fragment-index="1" hidden></div>
 <div class="fragment" data-fragment-index="2" hidden></div>
@@ -312,7 +319,9 @@ function onClick() {
 }
 ```
 
-<div id="highlight-connect-ble" class="highlight-code"></div>
+<code-highlighter
+    id="highlight-connect-ble"
+    line-height="0.57em"></code-highlighter>
 
 <div class="fragment" data-fragment-index="1" hidden></div>
 <div class="fragment" data-fragment-index="2" hidden></div>
@@ -336,7 +345,9 @@ device.gatt.getPrimaryService('battery_service')
 });
 ```
 
-<div id="highlight-read-charact" class="highlight-code"></div>
+<code-highlighter
+    id="highlight-read-charact"
+    line-height="0.57em"></code-highlighter>
 
 <div class="fragment" data-fragment-index="1" hidden></div>
 <div class="fragment" data-fragment-index="2" hidden></div>
@@ -360,7 +371,9 @@ device.gatt.getPrimaryService('generic_access')
 });
 ```
 
-<div id="highlight-write-charact" class="highlight-code"></div>
+<code-highlighter
+    id="highlight-write-charact"
+    line-height="0.57em"></code-highlighter>
 
 <div class="fragment" data-fragment-index="1" hidden></div>
 <div class="fragment" data-fragment-index="2" hidden></div>
@@ -387,7 +400,9 @@ function onValueChanged(event) {
 }
 ```
 
-<div id="highlight-notif-charact" class="highlight-code"></div>
+<code-highlighter
+    id="highlight-notif-charact"
+    line-height="0.57em"></code-highlighter>
 
 <div class="fragment" data-fragment-index="1" hidden></div>
 <div class="fragment" data-fragment-index="2" hidden></div>
@@ -529,8 +544,9 @@ navigator.nfc.push({
   });
 ```
 
-
-<div id="highlight-write-nfc" class="highlight-code"></div>
+<code-highlighter
+    id="highlight-write-nfc"
+    line-height="0.57em"></code-highlighter>
 
 <div class="fragment" data-fragment-index="1" hidden></div>
 
@@ -555,7 +571,9 @@ navigator.nfc.watch(message => {
 });
 ```
 
-<div id="highlight-read-nfc" class="highlight-code"></div>
+<code-highlighter
+    id="highlight-read-nfc"
+    line-height="0.57em"></code-highlighter>
 
 <div class="fragment" data-fragment-index="1" hidden></div>
 <div class="fragment" data-fragment-index="2" hidden></div>

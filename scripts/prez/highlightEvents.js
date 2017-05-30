@@ -10,30 +10,40 @@ const LEFT_FIRST = "60px";
 export class HighlightEvents {
   constructor() {
     //  Bluetooth: Scan + Connect
-    /*new HighlightCodeHelper({
+    new HighlightCodeHelper({
 			keyElt : 'connect-ble',
 			// We start with the first fragment (the initial position is fixed by css)
-			positionArray : [{
-				width: '500px',
+			positionArray : [
+			{
+				width: '600px',
+				line:5,
 				left: LEFT_FIRST
+			},
+			{
+				line: 2,
+				width: '900px',
+				left: LEFT_FIRST
+			},
+			{
+				line : 7,
+				width : '600px',
+				left: LEFT_FIRST
+			}]
+		});
+
+    //  Ble Code Read Characteristic
+    new HighlightCodeHelper({
+			keyElt : 'read-charact',
+			// We start with the first fragment (the initial position is fixed by css)
+			positionArray : [
+			{
+				width: '700px',
+				line:2
 			},{
-				line : 1,
+				line : 4,
 				width : '90%'
 			}, {
 				line : 6,
-				width : '90%'
-			}]
-		});*/
-
-    //  Ble Code Read Characteristic
-    /*new HighlightCodeHelper({
-			keyElt : 'read-charact',
-			// We start with the first fragment (the initial position is fixed by css)
-			positionArray : [{
-				line : 3,
-				width : '90%'
-			}, {
-				line : 5,
 				width : '90%'
 			}]
 		})
@@ -42,11 +52,15 @@ export class HighlightEvents {
 		new HighlightCodeHelper({
 			keyElt : 'write-charact',
 			// We start with the first fragment (the initial position is fixed by css)
-			positionArray : [{
-				line : 3,
+			positionArray : [
+				{
+				width: '700px',
+				line:2
+			},{
+				line : 4,
 				width : '90%'
 			}, {
-				line : 8,
+				line : 9,
 				width : '90%'
 			}]
 		})
@@ -56,14 +70,17 @@ export class HighlightEvents {
 			keyElt : 'notif-charact',
 			// We start with the first fragment (the initial position is fixed by css)
 			positionArray : [{
-				line : 3,
+				width: '700px',
+				line:2
+			},{
+				line : 4,
 				width : '90%'
 			}, {
-				line : 5,
+				line : 6,
 				width : '90%',
-				height: '186px'
+				nbLines: 3
 			}]
-		})*/
+		})
 
     // Code User Media 1
     new HighlightCodeHelper({
@@ -91,35 +108,38 @@ export class HighlightEvents {
       ]
     });
 
-    /*
 	// Code Web Speech
 	new HighlightCodeHelper({
 			keyElt : 'web-speech',
 			positionArray:[
-			{
-				line : 1,
-				width : '400px'
+				{
+				width: '600px',
+				line: 1
 			},
 			{
 				line : 2,
-				width : '500px'
+				width : '450px'
 			},
 			{
 				line : 3,
 				width : '550px'
 			},
 			{
-				line : 5,
-				width : '300px'
+				line : 4,
+				width : '550px'
 			},
 			{
 				line : 6,
-				width : '300px'
+				width : '350px'
 			},
 			{
 				line : 7,
+				width : '350px'
+			},
+			{
+				line : 8,
 				left : '280px',
-				width : '450px'
+				width : '500px'
 			}
 			]});
 
@@ -128,15 +148,19 @@ export class HighlightEvents {
 			keyElt : 'web-speech-grammar',
 			positionArray : [
 			{
-				line : 2,
-				width : '750px'
+				width: '1200px',
+				line: 1
 			},
 			{
 				line : 3,
-				width : '700px'
+				width : '750px'
 			},
 			{
 				line : 4,
+				width : '700px'
+			},
+			{
+				line : 5,
 				width : '650px'
 			}
 			]});
@@ -146,8 +170,8 @@ export class HighlightEvents {
 			keyElt : 'web-speech-synthesis',
 			positionArray: [
 			{
-				line : 1,
-				width : '400px'
+				width: '900px',
+				line: 1
 			},
 			{
 				line : 2,
@@ -155,10 +179,14 @@ export class HighlightEvents {
 			},
 			{
 				line : 3,
-				width : '450px'
+				width : '400px'
 			},
 			{
 				line : 4,
+				width : '450px'
+			},
+			{
+				line : 5,
 				width : '600px'
 			}
 			]});
@@ -168,9 +196,13 @@ export class HighlightEvents {
 	new HighlightCodeHelper({
 			keyElt : 'write-nfc',
 			positionArray : [
+				{
+				width: '350px',
+				line:1
+			},
 			{
-				line : 1,
-				col : 1,
+				line : 2,
+				left:LEFT_FIRST,
 				width : '1050px'
 			}
 			]});
@@ -179,23 +211,27 @@ export class HighlightEvents {
 	new HighlightCodeHelper({
 			keyElt : 'read-nfc',
 			positionArray : [
-			{
-				line : 0,
-				left: '330px',
-				width : '150px'
+				{
+				width: '250px',
+				line:1,
+				left: LEFT_FIRST
 			},
 			{
 				line : 1,
+				left: '310px',
+				width : '150px'
+			},
+			{
+				line : 2,
 				left: '90px',
 				width : '550px'
 			},
 			{
-				line : 2,
-				left: '550px',
-				calcHeight: 3,
+				line : 3,
+				left: '510px',
+				nbLines: 3,
 				width : '300px'
 			}
 			]});
-			*/
   }
 }

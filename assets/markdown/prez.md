@@ -78,76 +78,6 @@ online state <span>offline storage</span> PWA <span>web midi</span></h1>
 Notes:
 Aujourd'hui, on ne parlera pas de ça !
 
-##==##
-
-<!-- .slide: class="transition-white" -->
-
-# User Media
-
-![icon](./assets/images/camera_icon.png)
-
-##==##
-
-<!-- .slide: class="with-code" -->
-
-## User Media
-
-```javascript
-var vgaConstraints = {
-  video: {
-    mandatory: {
-      maxWidth: 640,
-      maxHeight: 360
-    }
-  }
-};
-```
-
-Notes:
-* Encore dépendant des navigateurs !
-* Possibilité de préciser ce qu'on récupère et on peut séparer les flux !
-* Sélection de la source / Récupération de l'audio
-* Devient intéressant s'il est mixé avec des effets ou des canvas.
-* **HTTPS** only !
-
-##==##
-
-<!-- .slide: class="with-code" data-state="code-user-media-v2" -->
-
-## User Media - V2
-
-```html
-<video autoplay></video>
-```
-```javascript
-// We define the video constraints
-var constraints = {video: true};
-
-navigator.mediaDevices.getUserMedia(constraints)
-.then(stream => {
-  video.srcObject = stream;
-});
-```
-
-<code-highlighter
-    id="highlight-user-media-v2"
-    line-height="0.57em"></code-highlighter>
-
-<div class="fragment" data-fragment-index="1" hidden></div>
-<div class="fragment" data-fragment-index="2" hidden></div>
-<div class="fragment" data-fragment-index="3" hidden></div>
-
-
-Notes:
-Toujours besoin de adapter.js pour faire marcher correctement !
-
-
-
-##==##
-
-<!-- .slide: data-state="stop-code-user-media-v2" data-background-video="assets/videos/hmqZxP6iTpo.mp4" data-background-video-loop="true" -->
-
-## Web Payments
 
 ##==##
 
@@ -418,56 +348,6 @@ Peut être qu'une image serait mieux ?
 
 ##==##
 
-<!-- .slide: class="transition-black" -->
-
-# On peut faire mieux !
-
-![icon](assets/images/myo.png)
-
-Notes:
-Myo
-
-<!--
-  _____   __          ________ ____
- |  __ \  \ \        / /  ____|  _ \
- | |__) |  \ \  /\  / /| |__  | |_) |
- |  ___/    \ \/  \/ / |  __| |  _ <
- | |         \  /\  /  | |____| |_) |
- |_|          \/  \/   |______|____/
-
--->
-
-##==##
-
-<img src="assets/images/myo.png" alt="myo img" id="connectMyo" class="center">
-
-##==##
-
-<!-- .slide: class="transition-white" -->
-
-# Tiens un slide à droite
-
-
-##--##
-
-<!-- .slide: class="transition-white" -->
-
-# Ah ! Je peux aussi aller en bas ?
-
-##--##
-
-<!-- .slide: class="transition-white" -->
-
-# Aller encore un petit pour la route !
-
-##==##
-
-<!-- .slide: class="transition-white" -->
-
-# C'est bon t'as fini de jouer ?
-
-##==##
-
 <!-- .slide: class="transition-black" data-state="disconnect-myo"-->
 
 # Mbot time
@@ -478,6 +358,16 @@ Notes:
 Bon j'ai créé une application pour le controller, tu peux me donner l'url stp ?
 
 ##==##
+
+<!--
+  _____   __          ________ ____
+ |  __ \  \ \        / /  ____|  _ \
+ | |__) |  \ \  /\  / /| |__  | |_) |
+ |  ___/    \ \/  \/ / |  __| |  _ <
+ | |         \  /\  /  | |____| |_) |
+ |_|          \/  \/   |______|____/
+
+-->
 
 <!-- .slide: class="transition-white" data-state="end-myo" -->
 
@@ -501,95 +391,6 @@ Bon j'ai créé une application pour le controller, tu peux me donner l'url stp 
 ##==##
 
 <!-- .slide: data-background-image="assets/images/opening-door.jpg" data-background-position="50% 50%" data-background-color="#000" data-background-size="contain" data-background-repeat="no-repeat" class="transition-black" -->
-
-##==##
-
-<!-- .slide: class="transition-black" -->
-
-# WebNFC
-
-![icon](./assets/images/nfc_demo.png)
-
-
-##==##
-
-<!-- .slide: class="transition-white" -->
-
-# Android Only
-
-##==##
-
-<!-- .slide: class="transition-white" -->
-
-# PUSH <br><br> WATCH  <br><br> PEER2PEER
-
-
-##==##
-
-<!-- .slide: class="transition-white" data-state="stop-code-write-nfc" -->
-
-# WRITE JSON <br><br> WRITE NDEF
-
-##==##
-
-<!-- .slide: class="with-code" data-state="code-write-nfc stop-code-read-nfc" -->
-
-## Push message
-
-```javascript
-navigator.nfc.push({
-    data: [{ recordType: 'url', data: 'https://devfest.gdgnantes.com' }]
-  }).then(_ => {
-    console.log('Message pushed.');
-  });
-```
-
-<code-highlighter
-    id="highlight-write-nfc"
-    line-height="0.57em"></code-highlighter>
-
-<div class="fragment" data-fragment-index="1" hidden></div>
-
-
-Notes:
-L'exemple ici présente un message ndef !
-
-
-##==##
-
-<!-- .slide: class="with-code" data-state="stop-code-write-nfc code-read-nfc" -->
-
-## Read message
-
-```javascript
-navigator.nfc.watch(message => {
-  for (let record of message.data) {
-    console.log('Record type:  ' + record.recordType);
-    console.log('MIME type:    ' + record.mediaType);
-    console.log('=== data ===\n' + record.data);
-  }
-});
-```
-
-<code-highlighter
-    id="highlight-read-nfc"
-    line-height="0.57em"></code-highlighter>
-
-<div class="fragment" data-fragment-index="1" hidden></div>
-<div class="fragment" data-fragment-index="2" hidden></div>
-<div class="fragment" data-fragment-index="3" hidden></div>
-
-Notes:
-ça marche pas encore
-
-##==##
-
-<!-- .slide: class="transition-black" data-state="stop-code-read-nfc" -->
-
-# let's write some tags !
-
-Notes:
-Utilisation d'un tag nfc pour ouvrir l'application et write sur un tag
 
 ##==##
 
@@ -623,7 +424,73 @@ navigator.usb.requestDevice({ filters: [{ vendorId: 0x2341 }] })
 
 ##==##
 
-<!-- .slide: data-background="assets/images/html5_sticker.png" class="no filter" data-copyrights="true" -->
+<!-- .slide: class="transition-white" -->
+
+# User Media
+
+![icon](./assets/images/camera_icon.png)
+
+##==##
+
+<!-- .slide: class="with-code" data-state="stop-code-user-media-v2" -->
+
+## User Media
+
+```javascript
+var vgaConstraints = {
+  video: {
+    mandatory: {
+      maxWidth: 640,
+      maxHeight: 360
+    }
+  }
+};
+```
+
+Notes:
+* Encore dépendant des navigateurs !
+* Possibilité de préciser ce qu'on récupère et on peut séparer les flux !
+* Sélection de la source / Récupération de l'audio
+* Devient intéressant s'il est mixé avec des effets ou des canvas.
+* **HTTPS** only !
+
+##==##
+
+<!-- .slide: class="with-code" data-state="code-user-media-v2" -->
+
+## User Media - V2
+
+```html
+<video autoplay></video>
+```
+```javascript
+// We define the video constraints
+var constraints = {video: true};
+
+navigator.mediaDevices.getUserMedia(constraints)
+.then(stream => {
+  video.srcObject = stream;
+});
+```
+
+<code-highlighter
+    id="highlight-user-media-v2"
+    line-height="0.57em"></code-highlighter>
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+<div class="fragment" data-fragment-index="2" hidden></div>
+<div class="fragment" data-fragment-index="3" hidden></div>
+
+
+Notes:
+Toujours besoin de adapter.js pour faire marcher correctement !
+
+
+
+
+##==##
+
+<!-- .slide: data-background="assets/images/html5_sticker.png" class="no filter" data-copyrights="true" data-state="stop-code-user-media-v2" -->
 
 ##==##
 

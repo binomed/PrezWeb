@@ -167,7 +167,7 @@ recognition.maxAlternatives = 1;
 ## Web Speech Synthesis
 
 ```javascript
-var utterThis = new SpeechSynthesisUtterance("Bonjour DevFest");
+var utterThis = new SpeechSynthesisUtterance("Bonjour Web2Day");
 utterThis.voice = 'fr-FR';
 utterThis.pitch = 1;
 utterThis.rate = 1;

@@ -424,62 +424,71 @@ navigator.usb.requestDevice({ filters: [{ vendorId: 0x2341 }] })
 
 ##==##
 
-<!-- .slide: class="transition-white" -->
+<!-- .slide: class="transition-white" data-state="stop-code-image-capture-zoom" -->
 
-# User Media
+# Image Capture
 
 ![icon](./assets/images/camera_icon.png)
 
 ##==##
 
-<!-- .slide: class="with-code" data-state="stop-code-user-media-v2" -->
+<!-- .slide: class="with-code" data-state="stop-code-image-capture code-image-capture-zoom" -->
 
-## User Media
+## Image Capture - Zoom
 
 ```javascript
-var vgaConstraints = {
-  video: {
-    mandatory: {
-      maxWidth: 640,
-      maxHeight: 360
-    }
-  }
-};
-```
+navigator.mediaDevices.getUserMedia({video: true})
+.then(mediaStream => {
+  const track = mediaStream.getVideoTracks()[0];
+  const imageCapture = new ImageCapture(track);
 
-Notes:
-* Encore dépendant des navigateurs !
-* Possibilité de préciser ce qu'on récupère et on peut séparer les flux !
-* Sélection de la source / Récupération de l'audio
-* Devient intéressant s'il est mixé avec des effets ou des canvas.
-* **HTTPS** only !
-
-##==##
-
-<!-- .slide: class="with-code" data-state="code-user-media-v2" -->
-
-## User Media - V2
-
-```html
-<video autoplay></video>
-```
-```javascript
-// We define the video constraints
-var constraints = {video: true};
-
-navigator.mediaDevices.getUserMedia(constraints)
-.then(stream => {
-  video.srcObject = stream;
-});
+  return imageCapture.getPhotoCapabilities()
+  .then(photoCapabilities => {
+    imageCapture.setOptions({zoom: 50});
+  });
+})
+.catch(error => console.log(error));
 ```
 
 <code-highlighter
-    id="highlight-user-media-v2"
+    id="highlight-image-capture-zoom"
     line-height="0.57em"></code-highlighter>
 
 <div class="fragment" data-fragment-index="1" hidden></div>
 <div class="fragment" data-fragment-index="2" hidden></div>
 <div class="fragment" data-fragment-index="3" hidden></div>
+<div class="fragment" data-fragment-index="4" hidden></div>
+
+Notes:
+Uniquement si le zoom est dispo
+
+##==##
+
+<!-- .slide: class="with-code" data-state="stop-code-image-capture-zoom code-image-capture" -->
+
+## Image Capture
+
+```javascript
+navigator.mediaDevices.getUserMedia({video: true})
+.then(mediaStream => {
+  ...
+  const imageCapture = new ImageCapture(track);
+
+  // Brightness /
+  imageCapture.track.applyConstraints({advanced : [option]});
+
+  // RedEye / ...
+  imageCapture.takePhoto(settings);
+})
+.catch(error => console.log(error));
+```
+
+<code-highlighter
+    id="highlight-image-capture"
+    line-height="0.57em"></code-highlighter>
+
+<div class="fragment" data-fragment-index="1" hidden></div>
+<div class="fragment" data-fragment-index="2" hidden></div>
 
 
 Notes:
@@ -487,10 +496,13 @@ Toujours besoin de adapter.js pour faire marcher correctement !
 
 
 
+##==##
+
+<!-- .slide: data-background-image="assets/images/camera.jpg" data-state="stop-code-image-capture" -->
 
 ##==##
 
-<!-- .slide: data-background="assets/images/html5_sticker.png" class="no filter" data-copyrights="true" data-state="stop-code-user-media-v2" -->
+<!-- .slide: data-background="assets/images/html5_sticker.png" class="no filter" data-copyrights="true"  -->
 
 ##==##
 

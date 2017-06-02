@@ -9,8 +9,8 @@ const LEFT_FIRST = "60px";
 
 export class HighlightEvents {
   constructor() {
-    //  Bluetooth: Scan + Connect
-    new HighlightCodeHelper({
+	//  Bluetooth: Scan + Connect
+	new HighlightCodeHelper({
 			keyElt : 'connect-ble',
 			// We start with the first fragment (the initial position is fixed by css)
 			positionArray : [
@@ -31,8 +31,8 @@ export class HighlightEvents {
 			}]
 		});
 
-    //  Ble Code Read Characteristic
-    new HighlightCodeHelper({
+	//  Ble Code Read Characteristic
+	new HighlightCodeHelper({
 			keyElt : 'read-charact',
 			// We start with the first fragment (the initial position is fixed by css)
 			positionArray : [
@@ -82,31 +82,6 @@ export class HighlightEvents {
 			}]
 		})
 
-    // Code User Media 1
-    new HighlightCodeHelper({
-      keyElt: "user-media-v2",
-      positionArray: [
-        {
-          width: "500px",
-          line: 4,
-          left: LEFT_FIRST
-        },
-        {
-          line: 6,
-          width: "700px"
-        },
-        {
-          line: 7,
-          left: "150px",
-          width: "100px"
-        },
-        {
-          line: 8,
-          left: "100px",
-          width: "700px"
-        }
-      ]
-    });
 
 	// Code Web Speech
 	new HighlightCodeHelper({
@@ -191,47 +166,55 @@ export class HighlightEvents {
 			}
 			]});
 
-
-	// Code write nfc
+	// Code image capture zoom
 	new HighlightCodeHelper({
-			keyElt : 'write-nfc',
+			keyElt : 'image-capture-zoom',
 			positionArray : [
 				{
-				width: '350px',
+				width: '90%',
 				line:1
 			},
 			{
-				line : 2,
-				left:LEFT_FIRST,
-				width : '1050px'
+				line : 3,
+				width : '90%'
+			},
+			{
+				line : 4,
+				width : '90%'
+			},
+			{
+				line : 6,
+				width : '90%'
+			},
+			{
+				line : 8,
+				width : '90%'
 			}
 			]});
 
-	// Code read nfc
+	// Code image capture
 	new HighlightCodeHelper({
-			keyElt : 'read-nfc',
-			positionArray : [
-				{
-				width: '250px',
-				line:1,
-				left: LEFT_FIRST
-			},
-			{
-				line : 1,
-				left: '310px',
-				width : '150px'
-			},
-			{
-				line : 2,
-				left: '90px',
-				width : '550px'
-			},
-			{
-				line : 3,
-				left: '510px',
-				nbLines: 3,
-				width : '300px'
-			}
-			]});
+		keyElt: "image-capture",
+		positionArray: [
+		{
+			width: "90%",
+			line: 4,
+			left: LEFT_FIRST
+		},
+		{
+			line: 6,
+			nbLines: 2,
+			left: LEFT_FIRST,
+			width: "90%"
+		},
+		{
+			line: 9,
+			nbLines: 2,
+			left: LEFT_FIRST,
+			width: "90%"
+		}
+	  ]
+	});
+
   }
 }

@@ -441,7 +441,7 @@ navigator.mediaDevices.getUserMedia({video: true})
 .then(stream => {
   const track = stream.getVideoTracks()[0];
   const capabilities = track.getCapabilities();
-  
+
   if ('zoom' in capabilities) {
     track.applyConstraints({advanced: [ { zoom: 2 } ]});
   }
@@ -472,7 +472,7 @@ navigator.mediaDevices.getUserMedia({video: true})
 .then(stream => {
   const track = stream.getVideoTracks()[0];
   const imageCapture = new ImageCapture(track);
-  
+
   imageCapture.takePhoto({ redEyeReduction: true });
 })
 ```
@@ -482,7 +482,6 @@ navigator.mediaDevices.getUserMedia({video: true})
     line-height="0.57em"></code-highlighter>
 
 <div class="fragment" data-fragment-index="1" hidden></div>
-<div class="fragment" data-fragment-index="2" hidden></div>
 
 
 Notes:

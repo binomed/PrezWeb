@@ -434,20 +434,18 @@ navigator.usb.requestDevice({ filters: [{ vendorId: 0x2341 }] })
 
 <!-- .slide: class="with-code" data-state="stop-code-image-capture code-image-capture-zoom" -->
 
-## Image Capture - Zoom
+## Image Capture - Change zoom
 
 ```javascript
 navigator.mediaDevices.getUserMedia({video: true})
-.then(mediaStream => {
-  const track = mediaStream.getVideoTracks()[0];
-  const imageCapture = new ImageCapture(track);
-
-  return imageCapture.getPhotoCapabilities()
-  .then(photoCapabilities => {
-    imageCapture.setOptions({zoom: 50});
-  });
+.then(stream => {
+  const track = stream.getVideoTracks()[0];
+  const capabilities = track.getCapabilities();
+  
+  if ('zoom' in capabilities) {
+    track.applyConstraints({advanced: [ { zoom: 2 } ]});
+  }
 })
-.catch(error => console.log(error));
 ```
 
 <code-highlighter
@@ -469,18 +467,14 @@ Uniquement si le zoom est dispo
 ## Image Capture
 
 ```javascript
+
 navigator.mediaDevices.getUserMedia({video: true})
-.then(mediaStream => {
-  ...
+.then(stream => {
+  const track = stream.getVideoTracks()[0];
   const imageCapture = new ImageCapture(track);
-
-  // Brightness /
-  imageCapture.track.applyConstraints({advanced : [option]});
-
-  // RedEye / ...
-  imageCapture.takePhoto(settings);
+  
+  imageCapture.takePhoto({ redEyeReduction: true });
 })
-.catch(error => console.log(error));
 ```
 
 <code-highlighter

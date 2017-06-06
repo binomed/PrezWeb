@@ -45,6 +45,11 @@ export class HighlightEvents {
 				width: '90%'
 			}, {
 				line: 6,
+				left: '400px',
+				width: '400px'
+			}, {
+				line: 7,
+				nbLines: 3,
 				width: '90%'
 			}]
 		})

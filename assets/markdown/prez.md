@@ -281,6 +281,7 @@ device.gatt.getPrimaryService('battery_service')
 
 <div class="fragment" data-fragment-index="1" hidden></div>
 <div class="fragment" data-fragment-index="2" hidden></div>
+<div class="fragment" data-fragment-index="3" hidden></div>
 
 ##==##
 

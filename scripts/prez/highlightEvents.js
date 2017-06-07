@@ -45,11 +45,10 @@ export class HighlightEvents {
 				width: '90%'
 			}, {
 				line: 6,
-				left: '400px',
-				width: '400px'
+				width: '90%'
 			}, {
-				line: 7,
-				nbLines: 3,
+				line: 8,
+				nbLines: 2,
 				width: '90%'
 			}]
 		})
@@ -65,7 +64,8 @@ export class HighlightEvents {
 				line: 4,
 				width: '90%'
 			}, {
-				line: 9,
+				line: 7,
+				nbLines: 3,
 				width: '90%'
 			}]
 		})

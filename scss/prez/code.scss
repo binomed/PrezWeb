@@ -8,12 +8,13 @@ $top-code: 90px;
 */
 
 @mixin line($row) {
-	top: calc(#{$top-code} + (#{$row} * #{$line-height}));
+  top: calc(#{$top-code} + (#{$row} * #{$line-height}));
 }
 
 @mixin height($row) {
-	height: #{$row}.4em;
+  height: #{$row}.4em;
 }
+
 
 /**
 * Gestion du highlighting de code

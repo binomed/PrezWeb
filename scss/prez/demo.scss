@@ -1,41 +1,41 @@
-
-
 @import "material-lite";
 
 /* Heart Rate Demo */
 
 #heartRateDemo {
-  height: 80%;
-
-  iframe {
-      width: 100%;
-      height: 100%;
-      border: 1px solid white;
-  }
+    height: 80%;
+    iframe {
+        width: 100%;
+        height: 100%;
+        border: 1px solid white;
+    }
 }
+
 
 /**
  * MBOT Part
  */
 
-#part-button-mbot{
-    display:none;
+#part-button-mbot {
+    display: none;
 }
-   
-.row{
+
+.row {
     display: flex;
-    flex-direction: row;   
+    flex-direction: row;
     margin: 20px;
-}        
- 
-.flex20{
-    flex:0.2;
 }
-.flex60{
-    flex:0.6;
+
+.flex20 {
+    flex: 0.2;
 }
-.flex40{
-    flex:0.4;
+
+.flex60 {
+    flex: 0.6;
+}
+
+.flex40 {
+    flex: 0.4;
 }
 
 
@@ -44,40 +44,38 @@
 */
 
 $item-load: 4;
-$load-colors: #3A8DF2, #E14E39, #FCC000, #3AA05C;
-
-.reveal .slides section#google-assistant{
-  h1{
-      margin-top:0px;
-  }
+$load-colors: #3A8DF2,
+#E14E39,
+#FCC000,
+#3AA05C;
+.reveal .slides section#google-assistant {
+    h1 {
+        margin-top: 0px;
+    }
 }
 
-.reveal .slides section #demoSpeech{
-  position: absolute;
-  width: 700px;
-  height: 300px;
-  top: 50%;
-  left: 50%;
-  margin-left: -350px;
-  margin-top: 100px;
-  background: rgba(255,255,255,.75);
-  box-shadow: 7px 7px 8px 0px rgba(45, 36, 36, 0.75);
-  color: #263238;
-  padding: 20px;
-  
-  #speech_input{
-      margin-top: 50px;
-      font-size: 0.9em;
-  }
-
-
-  i{
-    color : #263238;
-  }
+.reveal .slides section #demoSpeech {
+    position: absolute;
+    width: 700px;
+    height: 300px;
+    top: 50%;
+    left: 50%;
+    margin-left: -350px;
+    margin-top: 100px;
+    background: rgba(255, 255, 255, .75);
+    box-shadow: 7px 7px 8px 0px rgba(45, 36, 36, 0.75);
+    color: #263238;
+    padding: 20px;
+    #speech_input {
+        margin-top: 50px;
+        font-size: 0.9em;
+    }
+    i {
+        color: #263238;
+    }
     .loading {
         position: relative;
     }
-
     .item {
         $size: 20px;
         display: inline-block;
@@ -86,8 +84,7 @@ $load-colors: #3A8DF2, #E14E39, #FCC000, #3AA05C;
         height: $size;
         border-radius: 100%;
         animation: load-ball .5s ease-in-out infinite alternate;
-    }  
-
+    }
     @for $i from 1 through $item-load {
         .item-#{$i} {
             background: nth($load-colors, $i);
@@ -97,12 +94,12 @@ $load-colors: #3A8DF2, #E14E39, #FCC000, #3AA05C;
 }
 
 @keyframes load-ball {
-	0% {
-	  transform: translateY(0px);
-	}
-	100% {
-		transform: translateY(-13px);
-	}
+    0% {
+        transform: translateY(0px);
+    }
+    100% {
+        transform: translateY(-13px);
+    }
 }
 
 
@@ -110,9 +107,8 @@ $load-colors: #3A8DF2, #E14E39, #FCC000, #3AA05C;
 * Myo Popup
 */
 
-$size-myo-popup : 150px;
-
-.myo-popup{
+$size-myo-popup: 150px;
+.myo-popup {
     position: fixed;
     bottom: 50px;
     right: $size-myo-popup;
@@ -122,10 +118,13 @@ $size-myo-popup : 150px;
     border-radius: 10px;
 }
 
-
-.myo-popup.rest:after, .myo-popup.fist:after, .myo-popup.wave-in:after,
-.myo-popup.wave-out:after, .myo-popup.fingers-spread:after, .myo-popup.double-tap:after, 
-.myo-popup.unknown:after{
+.myo-popup.rest:after,
+.myo-popup.fist:after,
+.myo-popup.wave-in:after,
+.myo-popup.wave-out:after,
+.myo-popup.fingers-spread:after,
+.myo-popup.double-tap:after,
+.myo-popup.unknown:after {
     content: '';
     position: absolute;
     width: $size-myo-popup;
@@ -138,27 +137,45 @@ $size-myo-popup : 150px;
     background-size: cover;
 }
 
-.myo-popup.rest:after{
+.myo-popup.rest:after {
     background-image: url(../../assets/images/myo_pan.png);
 }
 
-.myo-popup.fist:after{
+.myo-popup.fist:after {
     background-image: url(../../assets/images/myo_fist.png);
 }
 
-.myo-popup.wave-in:after{
+.myo-popup.wave-in:after {
     background-image: url(../../assets/images/myo_wave_left.png);
 }
 
-.myo-popup.wave-out:after{
+.myo-popup.wave-out:after {
     background-image: url(../../assets/images/myo_wave_right.png);
 }
 
-.myo-popup.fingers-spread:after{
+.myo-popup.fingers-spread:after {
     background-image: url(../../assets/images/myo_spread_fingers.png);
 }
 
-.myo-popup.double-tap:after{
+.myo-popup.double-tap:after {
     background-image: url(../../assets/images/myo_double_tap.png);
 }
 
+.imageCapture .container-flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    video {
+        width: 800px;
+    }
+    input {
+        width: 60%;
+        margin: 10px 20px;
+    }
+    input:before {
+        content: attr(data-name);
+        font-size: 2em;
+        position: absolute;
+        transform: translateX(-150px);
+    }
+}

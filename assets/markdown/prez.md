@@ -492,11 +492,25 @@ Toujours besoin de adapter.js pour faire marcher correctement !
 
 ##==##
 
-<!-- .slide: data-background-image="assets/images/camera.jpg" data-state="stop-code-image-capture" -->
+<!-- .slide: data-background-image="assets/images/camera.jpg" data-state="stop-code-image-capture stop-image-capture-demo" -->
 
 ##==##
 
-<!-- .slide: data-background="assets/images/html5_sticker.png" class="no filter" data-copyrights="true"  -->
+<!-- .slide: data-state="image-capture-demo" class="imageCapture" data-background="#3d4349"-->
+
+
+<div class="container-flex">
+<video id="imageCapture" autoplay></video>
+<input id="brightness" type="range" />
+<input id="contrast" type="range" />
+<input id="saturation" type="range" />
+<input id="sharpness" type="range" />
+</div>
+
+
+##==##
+
+<!-- .slide: data-background="assets/images/html5_sticker.png" data-state="stop-image-capture-demo" class="no filter" data-copyrights="true"  -->
 
 ##==##
 

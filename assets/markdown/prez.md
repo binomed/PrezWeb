@@ -349,7 +349,7 @@ Peut être qu'une image serait mieux ?
 
 ##==##
 
-<!-- .slide: class="transition-black" data-state="disconnect-myo"-->
+<!-- .slide: class="transition-black" data-state="disconnect-heart-rate-sensor"-->
 
 # Mbot time
 

@@ -33,6 +33,12 @@ export class RevealEngineEvents{
 				this._blePrezControler._currentBleDevice.gatt.disconnect();
 			}
 		})
+		Reveal.addEventListener('disconnect-heart-rate-sensor', event => {
+                        // Try to disconnect heart rate sensor
+                        if (frames[0].heartRateSensor.device) {
+                                frames[0].heartRateSensor.device.gatt.disconnect();
+                        }
+		})
 	}
 
 	_voiceEvents(){

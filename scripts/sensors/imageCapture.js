@@ -29,32 +29,35 @@ export class ImageCaptureControler {
     _gotMedia(mediaStream) {
         this.mediaStreamTrack = mediaStream.getVideoTracks()[0];
         this.imageCapture = new ImageCapture(this.mediaStreamTrack);
-        let constraints = this.imageCapture.track.getConstraints();
-        let settings = this.imageCapture.track.getSettings();
-        let capabilities = this.imageCapture.track.getCapabilities();
-        for (let capabilityName in capabilities) {
-            let capability = capabilities[capabilityName];
-            if (capability.toString() === '[object MediaSettingsRange]') {
-                let value = settings[capabilityName];
-                switch (capabilityName) {
-                    case 'brightness':
-                        this._initRange(this.brightnessElt, capabilityName, value, capability);
-                        break;
-                    case 'contrast':
-                        this._initRange(this.contrastElt, capabilityName, value, capability);
-                        break;
-                    case 'saturation':
-                        this._initRange(this.saturationElt, capabilityName, value, capability);
-                        break;
-                    case 'sharpness':
-                        this._initRange(this.sharpnessElt, capabilityName, value, capability);
-                        break;
+        this.imageCaptureElt.srcObject = mediaStream;
+        setTimeout(() => {
 
+            let constraints = this.imageCapture.track.getConstraints();
+            let settings = this.imageCapture.track.getSettings();
+            let capabilities = this.imageCapture.track.getCapabilities();
+            for (let capabilityName in capabilities) {
+                let capability = capabilities[capabilityName];
+                if (capability.toString() === '[object MediaSettingsRange]') {
+                    let value = settings[capabilityName];
+                    switch (capabilityName) {
+                        case 'brightness':
+                            this._initRange(this.brightnessElt, capabilityName, value, capability);
+                            break;
+                        case 'contrast':
+                            this._initRange(this.contrastElt, capabilityName, value, capability);
+                            break;
+                        case 'saturation':
+                            this._initRange(this.saturationElt, capabilityName, value, capability);
+                            break;
+                        case 'sharpness':
+                            this._initRange(this.sharpnessElt, capabilityName, value, capability);
+                            break;
+
+                    }
                 }
             }
-        }
-        console.log(this.imageCapture);
-        this.imageCaptureElt.srcObject = mediaStream;
+            console.log(this.imageCapture);
+        }, 500);
     }
 
     _initRange(capabilityElt, capabilityName, value, range) {

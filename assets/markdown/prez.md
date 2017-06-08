@@ -474,7 +474,10 @@ navigator.mediaDevices.getUserMedia({video: true})
   const track = stream.getVideoTracks()[0];
   const imageCapture = new ImageCapture(track);
 
-  imageCapture.takePhoto({ redEyeReduction: true });
+  imageCapture.takePhoto({ redEyeReduction: true })
+  .then(blob => {
+    img.src = URL.createObjectURL(blob);
+  });
 })
 ```
 

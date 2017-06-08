@@ -208,7 +208,8 @@ export class HighlightEvents {
 				{
 					line: 7,
 					left: LEFT_FIRST,
-					width: "90%"
+					width: "90%",
+                                        nbLines: 3
 				}
 			]
 		});
